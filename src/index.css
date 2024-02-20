@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-colour: #007bff; /* Example for a primary color variable */
+  --secondary-colour: #00356c; /* Example for a base font size variable */
+}

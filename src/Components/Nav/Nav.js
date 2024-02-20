@@ -4,9 +4,9 @@ import { Outlet, NavLink } from "react-router-dom";
 function Nav() {
   return (
     <React.Fragment>
-      <nav className=" bg-slate-600 flex px-10 pt-5 justify-between">
-        <div>
-          Nexa<span>Cura</span>
+      <nav className="flex px-10 pt-5 justify-between">
+        <div className=" text-primary">
+          Nexa<span className="text-secondary font-semibold">Cura</span>
         </div>
         <div className=" flex gap-x-3">
           <NavLink to="/">Home</NavLink>
