@@ -4,8 +4,8 @@ import { Outlet, NavLink } from "react-router-dom";
 function Nav() {
   return (
     <React.Fragment>
-      <nav className="flex px-10 pt-5 justify-between">
-        <div className=" text-primary">
+      <nav className="flex px-10 py-3 justify-between text-lg items-center font-medium text-gray-400">
+        <div className=" text-primary text-4xl font-bold">
           Nexa<span className="text-secondary font-semibold">Cura</span>
         </div>
         <div className=" flex gap-x-3">
