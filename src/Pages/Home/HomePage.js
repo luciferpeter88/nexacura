@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "../../Components/Button/Button";
+import { Bubble, Circle } from "../../Components/Bubble/Bubble";
+import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 
 function HomePage() {
   return (
@@ -11,14 +13,14 @@ function HomePage() {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        class="grid grid-cols-1 xl:grid-cols-2 px-10 pt-24 pb-32 text-white"
+        class="grid grid-cols-1 xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative"
       >
-        <div class="flex flex-col gap-y-3">
+        <Blacklayer />
+        <div class="flex flex-col gap-y-3 z-10">
           <h1 class="text-5xl font-bold font-sans ">
             Chat with History's Legends Through AI
           </h1>
           <p class="text-lg">
-            {" "}
             Connect with the greatest minds in history from the comfort of your
             home. Engage in conversations with iconic historical figures like
             Isaac Newton and Albert Einstein through our AI-powered platform.
@@ -29,7 +31,19 @@ function HomePage() {
             <Button />
           </div>
         </div>
-        <div class="bg-red-300">Div 2</div>
+        <div class="w-3/4 flex flex-col gap-y-5 z-10 pt-10">
+          <div className="flex items-center gap-x-10 justify-end">
+            <Circle />
+            <Bubble />
+          </div>
+          <div className="flex items-center gap-x-10">
+            <Bubble />
+            <Circle />
+          </div>
+          <div className="flex justify-center">
+            <Circle />
+          </div>
+        </div>
       </div>
 
       {/* <!-- Second Section --> */}
