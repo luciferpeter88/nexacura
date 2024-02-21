@@ -7,16 +7,9 @@ function HomePage() {
   return (
     <div class="">
       {/* <!-- First Section --> */}
-      <div
-        style={{
-          backgroundImage: `url(/img/bg.jpeg)`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-        class="grid grid-cols-1 xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative"
-      >
+      <div class="grid grid-cols-1  xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
         <Blacklayer />
-        <div class="flex flex-col gap-y-3 z-10">
+        <div class="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
           <h1 class="text-5xl font-bold font-sans ">
             Chat with History's Legends Through AI
           </h1>
@@ -31,8 +24,8 @@ function HomePage() {
             <Button />
           </div>
         </div>
-        <div class="w-3/4 flex flex-col gap-y-5 z-10 pt-10">
-          <div className="flex items-center gap-x-10 justify-end">
+        <div class="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 xl:order-2">
+          <div className="flex items-center gap-x-10 justify-end ">
             <Circle />
             <Bubble />
           </div>
