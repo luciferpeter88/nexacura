@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../../Components/Button/Button";
 import { Bubble, Circle } from "../../Components/Bubble/Bubble";
 import Blacklayer from "../../Components/BlackLayer/Blacklayer";
+import Card from "../../Components/Card/Card";
+import Thinking from "../../assets/thinking.jpg";
 
 function HomePage() {
   return (
@@ -41,16 +43,42 @@ function HomePage() {
 
       {/* <!-- Second Section --> */}
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="bg-blue-200">Div 1</div>
-        <div class="bg-blue-300">Div 2</div>
-        <div class="bg-blue-400">Div 3</div>
-        <div class="bg-blue-500">Div 4</div>
+        <div class="">
+          <Card />
+        </div>
+        <div class="">
+          <Card />
+        </div>
+        <div class="">
+          <Card />
+        </div>
+        <div class="">
+          <Card />
+        </div>
       </div>
 
       {/* <!-- Third Section --> */}
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <div class="bg-green-200">Div 1</div>
-        <div class="bg-green-300">Div 2</div>
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 py-20">
+        <div class="px-10 pt-24 pb-32 flex justify-center items-center">
+          <div class="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
+            <h1 class="text-5xl font-bold font-sans  text-primary">
+              Chat with History's Legends Through AI
+            </h1>
+            <p class="text-lg">
+              Connect with the greatest minds in history from the comfort of
+              your home. Engage in conversations with iconic historical figures
+              like Isaac Newton and Albert Einstein through our AI-powered
+              platform. Our cutting-edge AI technology brings these historical
+              figures to life in interactive and educational chats.
+            </p>
+            <div>
+              <Button />
+            </div>
+          </div>
+        </div>
+        <div class="h-90 ">
+          <img src={Thinking} alt="Thinking" class="w-full h-full" />
+        </div>
       </div>
 
       {/* <!-- Fourth Section --> */}
