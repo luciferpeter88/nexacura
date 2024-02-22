@@ -4,7 +4,7 @@
 
 :root {
   --primary-colour: #007bff; /* Example for a primary color variable */
-  --secondary-colour: #00356c; /* Example for a base font size variable */
+  --secondary-colour: #ffb01b; /* Example for a base font size variable */
 }
 .bg-custom-image {
   background-image: url("../public/img/bg.jpeg");

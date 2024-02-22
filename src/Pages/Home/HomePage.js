@@ -1,9 +1,10 @@
 import React from "react";
-import Button from "../../Components/Button/Button";
+
 import { Bubble, Circle } from "../../Components/Bubble/Bubble";
 import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 import Card from "../../Components/Card/Card";
 import Thinking from "../../assets/thinking.jpg";
+import OutlineButton from "../../Components/Button/OutlineButton";
 
 function HomePage() {
   return (
@@ -23,7 +24,15 @@ function HomePage() {
             life in interactive and educational chats.
           </p>
           <div>
-            <Button />
+            <OutlineButton
+              borderColor="border-secondary"
+              hoverBorderColor="hover:border-secondary"
+              textColor="text-white"
+              hoverTextColor="hover:text-secondary"
+              buttonText="Try Now"
+              hoverBackgroundColor="hover:bg-transparent"
+              backgroundColor="bg-secondary"
+            />
           </div>
         </div>
         <div class="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 xl:order-2">
@@ -71,9 +80,16 @@ function HomePage() {
               platform. Our cutting-edge AI technology brings these historical
               figures to life in interactive and educational chats.
             </p>
-            <div>
-              <Button />
-            </div>
+
+            <OutlineButton
+              borderColor="border-secondary"
+              hoverBorderColor="hover:border-secondary"
+              textColor="text-white"
+              hoverTextColor="hover:text-secondary"
+              buttonText="Try Now"
+              hoverBackgroundColor="hover:bg-transparent"
+              backgroundColor="bg-secondary"
+            />
           </div>
         </div>
         <div class="h-90 ">
