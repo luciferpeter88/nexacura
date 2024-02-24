@@ -1,5 +1,5 @@
 import React from "react";
-
+import Text from "../../Components/Text/Text";
 import { Bubble, Circle } from "../../Components/Bubble/Bubble";
 import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 import Card from "../../Components/Card/Card";
@@ -8,21 +8,26 @@ import OutlineButton from "../../Components/Button/OutlineButton";
 
 function HomePage() {
   return (
-    <div class="">
+    <div className="">
       {/* <!-- First Section --> */}
-      <div class="grid grid-cols-1  xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
+      <div className="grid grid-cols-1  xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
         <Blacklayer />
-        <div class="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
-          <h1 class="text-5xl font-bold font-sans ">
+        <div className="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
+          <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
             Chat with History's Legends Through AI
-          </h1>
-          <p class="text-lg">
+          </Text>
+          <Text
+            className="text-base text-gray-200"
+            size="txtPoppinsRegular20"
+            htmlTag="h3"
+          >
             Connect with the greatest minds in history from the comfort of your
             home. Engage in conversations with iconic historical figures like
             Isaac Newton and Albert Einstein through our AI-powered platform.
             Our cutting-edge AI technology brings these historical figures to
             life in interactive and educational chats.
-          </p>
+          </Text>
+
           <div>
             <OutlineButton
               borderColor="border-secondary"
@@ -35,7 +40,7 @@ function HomePage() {
             />
           </div>
         </div>
-        <div class="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 xl:order-2">
+        <div className="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 xl:order-2">
           <div className="flex items-center gap-x-10 justify-end ">
             <Circle />
             <Bubble />
@@ -51,7 +56,7 @@ function HomePage() {
       </div>
 
       {/* <!-- Second Section --> */}
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 mt-5 md:mt-[-3rem]">
         <Card />
         <Card />
         <Card />
@@ -59,13 +64,13 @@ function HomePage() {
       </div>
 
       {/* <!-- Third Section --> */}
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 py-20">
-        <div class="px-10 pt-24 pb-32 flex justify-center items-center">
-          <div class="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
-            <h1 class="text-5xl font-bold font-sans  text-primary">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 py-20 px-10">
+        <div clasName="px-10 pt-24 pb-32 flex justify-center items-center">
+          <div className="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
+            <h1 className="text-5xl font-bold font-sans  text-primary">
               Chat with History's Legends Through AI
             </h1>
-            <p class="text-lg">
+            <p className="text-lg">
               Connect with the greatest minds in history from the comfort of
               your home. Engage in conversations with iconic historical figures
               like Isaac Newton and Albert Einstein through our AI-powered
@@ -84,8 +89,8 @@ function HomePage() {
             />
           </div>
         </div>
-        <div class="h-90 ">
-          <img src={Thinking} alt="Thinking" class="w-full h-full" />
+        <div className="h-90 ">
+          <img src={Thinking} alt="Thinking" className="w-full h-full" />
         </div>
       </div>
 
