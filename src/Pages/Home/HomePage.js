@@ -5,6 +5,8 @@ import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 import Card from "../../Components/Card/Card";
 import Thinking from "../../assets/thinking.jpg";
 import OutlineButton from "../../Components/Button/OutlineButton";
+import MoreCard from "../../Components/Card/MoreCard";
+import Faq from "../../Components/Faq/Faq";
 
 function HomePage() {
   return (
@@ -101,18 +103,36 @@ function HomePage() {
       </div>
 
       {/* <!-- Fourth Section --> */}
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="bg-yellow-200">Div 1</div>
-        <div class="bg-yellow-300">Div 2</div>
-        <div class="bg-yellow-400">Div 3</div>
-        <div class="bg-yellow-500">Div 4</div>
+      <div class=" px-10">
+        <Text
+          size="txtOpenSansBold50"
+          className=" text-center text-5xl text-primary"
+        >
+          Simple with real features
+        </Text>
+        <Text
+          size="txtPoppinsMedium16Gray90001"
+          className=" text-center text-lg text-gray-600 mt-3"
+        >
+          Our AI technology optimizes the voice generation process, providing
+          fast and accurate results
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 mt-10">
+        <MoreCard />
+        <MoreCard />
+        <MoreCard />
+        <MoreCard />
       </div>
 
       {/* <!-- Fifth Section --> */}
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <div class="bg-purple-200">Div 1</div>
-        <div class="bg-purple-300">Div 2</div>
-      </div>
+      <Text
+        size="txtOpenSansBold50"
+        className="lg:pl-0 text-left lg:text-center text-5xl text-primary mt-16 px-10"
+      >
+        Have a question ? Look here ...
+      </Text>
+      <Faq />
 
       {/* <!-- Sixth Section --> */}
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
