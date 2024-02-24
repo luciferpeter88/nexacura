@@ -9,9 +9,9 @@ import MoreCard from "../../Components/Card/MoreCard";
 import Faq from "../../Components/Faq/Faq";
 import Testimonial from "../../Components/Card/Testimonial";
 import reviews from "../../data/review";
+import Footer from "../../Components/Footer/Footer";
 
 function HomePage() {
-  console.log(reviews);
   return (
     <div className="">
       {/* <!-- First Section --> */}
@@ -156,13 +156,7 @@ function HomePage() {
         })}
       </div>
 
-      {/* <!-- Footer --> */}
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="bg-gray-200">Div 1</div>
-        <div class="bg-gray-300">Div 2</div>
-        <div class="bg-gray-400">Div 3</div>
-        <div class="bg-gray-500">Div 4</div>
-      </div>
+      <Footer />
     </div>
   );
 }
