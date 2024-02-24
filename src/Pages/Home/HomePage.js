@@ -52,18 +52,10 @@ function HomePage() {
 
       {/* <!-- Second Section --> */}
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="">
-          <Card />
-        </div>
-        <div class="">
-          <Card />
-        </div>
-        <div class="">
-          <Card />
-        </div>
-        <div class="">
-          <Card />
-        </div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
 
       {/* <!-- Third Section --> */}

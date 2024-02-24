@@ -1,13 +1,21 @@
 import React from "react";
 
-const OutlineButton = (props) => {
+function OutlineButton({
+  borderColor,
+  hoverBorderColor,
+  textColor,
+  hoverTextColor,
+  buttonText,
+  hoverBackgroundColor,
+  backgroundColor,
+}) {
   return (
     <button
-      className={`${props.backgroundColor} outline-none mr-1 mb-1 border border-solid ${props.borderColor} w-32 rounded px-6 py-3  text-sm font-bold ${props.textColor} uppercase focus:outline-none ${props.hoverBorderColor} ${props.hoverTextColor} ${props.hoverBackgroundColor} transition-all duration-150 ease-in-out`}
+      className={`${backgroundColor} outline-none mr-1 mb-1 border border-solid ${borderColor} w-32 rounded px-6 py-3  text-sm font-bold ${textColor} uppercase focus:outline-none ${hoverBorderColor} ${hoverTextColor} ${hoverBackgroundColor} transition-all duration-150 ease-in-out`}
     >
-      {props.buttonText}
+      {buttonText}
     </button>
   );
-};
+}
 
 export default OutlineButton;
