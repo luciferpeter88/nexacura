@@ -7,8 +7,11 @@ import Thinking from "../../assets/thinking.jpg";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import MoreCard from "../../Components/Card/MoreCard";
 import Faq from "../../Components/Faq/Faq";
+import Testimonial from "../../Components/Card/Testimonial";
+import reviews from "../../data/review";
 
 function HomePage() {
+  console.log(reviews);
   return (
     <div className="">
       {/* <!-- First Section --> */}
@@ -135,11 +138,22 @@ function HomePage() {
       <Faq />
 
       {/* <!-- Sixth Section --> */}
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="bg-pink-200">Div 1</div>
-        <div class="bg-pink-300">Div 2</div>
-        <div class="bg-pink-400">Div 3</div>
-        <div class="bg-pink-500">Div 4</div>
+      <Text
+        size="txtOpenSansBold50"
+        className="lg:pl-0 text-left lg:text-center text-5xl text-primary mt-16 px-10 mb-20"
+      >
+        What our clients says
+      </Text>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10">
+        {reviews.map((review) => {
+          return (
+            <Testimonial
+              rating={review.ratings}
+              name={review.name}
+              review={review.description}
+            />
+          );
+        })}
       </div>
 
       {/* <!-- Footer --> */}
