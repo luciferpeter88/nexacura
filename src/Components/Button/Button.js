@@ -1,10 +1,8 @@
 import React from "react";
 
-function Button(props) {
+function Button({ colour }) {
   return (
-    <button class={`${props.colour} font-medium py-2 px-8 rounded'`}>
-      Try Now
-    </button>
+    <button class={`${colour} font-medium py-2 px-8 rounded'`}>Try Now</button>
   );
 }
 

@@ -10,9 +10,9 @@ function HomePage() {
   return (
     <div className="">
       {/* <!-- First Section --> */}
-      <div className="grid grid-cols-1  xl:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
+      <div className="grid grid-cols-1  lg:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
         <Blacklayer />
-        <div className="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
+        <div className="flex flex-col gap-y-3 z-10 order-2 lg:order-1">
           <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
             Chat with History's Legends Through AI
           </Text>
@@ -40,7 +40,7 @@ function HomePage() {
             />
           </div>
         </div>
-        <div className="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 xl:order-2">
+        <div className="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 lg:order-2">
           <div className="flex items-center gap-x-10 justify-end ">
             <Circle />
             <Bubble />
@@ -64,33 +64,39 @@ function HomePage() {
       </div>
 
       {/* <!-- Third Section --> */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 py-20 px-10">
-        <div clasName="px-10 pt-24 pb-32 flex justify-center items-center">
-          <div className="flex flex-col gap-y-3 z-10 order-2 xl:order-1">
-            <h1 className="text-5xl font-bold font-sans  text-primary">
-              Chat with History's Legends Through AI
-            </h1>
-            <p className="text-lg">
-              Connect with the greatest minds in history from the comfort of
-              your home. Engage in conversations with iconic historical figures
-              like Isaac Newton and Albert Einstein through our AI-powered
-              platform. Our cutting-edge AI technology brings these historical
-              figures to life in interactive and educational chats.
-            </p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-20 px-10">
+        <div className="flex flex-col gap-y-3 z-10 justify-center">
+          <Text
+            className="text-5xl text-primary"
+            size="txtOpenSansBold50"
+            htmlTag="h4"
+          >
+            Chat with History's Legends Through AI
+          </Text>
+          <Text className="text-lg text-gray-600 " size="txtPoppinsRegular16">
+            Connect with the greatest minds in history from the comfort of your
+            home. Engage in conversations with iconic historical figures like
+            Isaac Newton and Albert Einstein through our AI-powered platform.
+            Our cutting-edge AI technology brings these historical figures to
+            life in interactive and educational chats.
+          </Text>
 
-            <OutlineButton
-              borderColor="border-secondary"
-              hoverBorderColor="hover:border-secondary"
-              textColor="text-white"
-              hoverTextColor="hover:text-secondary"
-              buttonText="Try Now"
-              hoverBackgroundColor="hover:bg-transparent"
-              backgroundColor="bg-secondary"
-            />
-          </div>
+          <OutlineButton
+            borderColor="border-secondary"
+            hoverBorderColor="hover:border-secondary"
+            textColor="text-white"
+            hoverTextColor="hover:text-secondary"
+            buttonText="Try Now"
+            hoverBackgroundColor="hover:bg-transparent"
+            backgroundColor="bg-secondary"
+          />
         </div>
-        <div className="h-90 ">
-          <img src={Thinking} alt="Thinking" className="w-full h-full" />
+        <div className=" order-first lg:order-last">
+          <img
+            src={Thinking}
+            alt="Thinking"
+            className=" object-cover h-full w-full rounded-lg shadow-lg"
+          />
         </div>
       </div>
 
