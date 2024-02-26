@@ -3,16 +3,16 @@ import React from "react";
 function Card() {
   return (
     <div className="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
-      <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
+      <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10] hover:text-[#eab676]]"></span>
       <div className="relative z-10 mx-auto max-w-md">
-        <span className="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
+        <span className="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400 group-hover:text-[#eab676]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="h-10 w-10 text-white transition-all"
+            className="h-10 w-10  text-white transition-all"
           >
             <path
               strokeLinecap="round"
@@ -22,7 +22,7 @@ function Card() {
           </svg>
         </span>
         <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-          <h3 className="text-2xl font-bold leading-7 text-gray-900">
+          <h3 className="text-2xl font-bold leading-7 group-hover:text-[#eab676] text-primary">
             Confidential Conversation
           </h3>
           <p>

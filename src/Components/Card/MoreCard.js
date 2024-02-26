@@ -3,8 +3,8 @@ import Text from "../Text/Text";
 
 function MoreCard() {
   return (
-    <div className="rounded-lg shadow-2xl p-5 py-10 border-t-8 border-primary">
-      <Text className="text-2xl font-bold leading-7 text-gray-900">
+    <div className="rounded-lg shadow-2xl p-5 py-10 border-t-8 border-secondary">
+      <Text className="text-2xl font-bold leading-7 text-primary">
         Expertise Meets Innovation
       </Text>
       <Text className="text-lg text-gray-600 mt-3">
