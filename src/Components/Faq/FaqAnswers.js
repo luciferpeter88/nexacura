@@ -1,5 +1,6 @@
 import React from "react";
-import { FaPlus } from "react-icons/fa6";
+import { FaPlus, FaMinus } from "react-icons/fa6";
+
 function FaqAnswers({ data }) {
   const [isOpen, setIsOpen] = React.useState({});
 
@@ -22,8 +23,19 @@ function FaqAnswers({ data }) {
                 toggleOpen(item.key);
               }}
             >
-              <FaPlus className="text-primary text-xl" />
-              <h2 className="text-xl text-left">{item.question}</h2>
+              {isOpen[item.key] ? (
+                <FaMinus className="text-secondary text-xl" />
+              ) : (
+                <FaPlus className="text-primary text-xl" />
+              )}
+
+              <h2
+                className={`${
+                  isOpen[item.key] ? "text-secondary" : "text-gray-500"
+                } text-xl text-left`}
+              >
+                {item.question}
+              </h2>
             </div>
             {isOpen[item.key] && (
               <p className="pl-10 text-black text-left">{item.answer}</p>

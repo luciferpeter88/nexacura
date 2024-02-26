@@ -10,6 +10,8 @@ function Footer() {
   const getYear = () => {
     return new Date().getFullYear().toString();
   };
+  const color = (isActive) => (isActive ? "text-secondary" : "text-white");
+  const style = "transition duration-300 ease-in-out";
 
   return (
     <div>
@@ -23,40 +25,45 @@ function Footer() {
             life in interactive and educational chats.
           </Text>
           <div className="flex text-white text-xl gap-3 ">
-            <FaLinkedin />
-            <FaFacebook />
-            <FaYoutube />
+            <FaLinkedin className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            <FaFacebook className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            <FaYoutube className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
           </div>
         </div>
         <div class="flex flex-col gap-y-3">
           <Text className="text-white text-xl" size="txtPoppinsMedium16">
             Quick Links
           </Text>
-          <NavLink className="hover:text-primary" to="/">
-            <Text className="text-white" size="txtPoppinsRegular14">
-              Home
-            </Text>
+          <NavLink
+            className={({ isActive }) => `${color(isActive)} ${style}`}
+            to="/"
+          >
+            <Text size="txtPoppinsRegular14">Home</Text>
           </NavLink>
-          <NavLink className="hover:text-primary" to="/about">
-            <Text className="text-white" size="txtPoppinsRegular14">
-              About
-            </Text>
+          <NavLink
+            className={({ isActive }) => `${color(isActive)} ${style}`}
+            to="/about"
+          >
+            <Text size="txtPoppinsRegular14">About</Text>
           </NavLink>
-          <NavLink className="hover:text-primary" to="/pricing">
-            <Text className="text-white" size="txtPoppinsRegular14">
-              Pricing
-            </Text>
+          <NavLink
+            className={({ isActive }) => `${color(isActive)} ${style}`}
+            to="/pricing"
+          >
+            <Text size="txtPoppinsRegular14">Pricing</Text>
           </NavLink>
-          <NavLink to="/register">
-            <Text className="text-white" size="txtPoppinsRegular14">
-              Register
-            </Text>
+          <NavLink
+            to="/register"
+            className={({ isActive }) => `${color(isActive)} ${style}`}
+          >
+            <Text size="txtPoppinsRegular14">Register</Text>
           </NavLink>
 
-          <NavLink to="/login">
-            <Text className="text-white" size="txtPoppinsRegular14">
-              Login
-            </Text>
+          <NavLink
+            to="/login"
+            className={({ isActive }) => `${color(isActive)} ${style}`}
+          >
+            <Text size="txtPoppinsRegular14">Login</Text>
           </NavLink>
         </div>
         <div class="">
@@ -67,10 +74,11 @@ function Footer() {
             <Text className="text-white" size="txtPoppinsRegular14">
               FAQs
             </Text>
-            <NavLink className="hover:text-primary" to="/contact">
-              <Text className="text-white" size="txtPoppinsRegular14">
-                Contact
-              </Text>
+            <NavLink
+              className={({ isActive }) => `${color(isActive)} ${style}`}
+              to="/contact"
+            >
+              <Text size="txtPoppinsRegular14">Contact</Text>
             </NavLink>
 
             <Text className="text-white" size="txtPoppinsRegular14">
