@@ -49,16 +49,16 @@ function Faq() {
           className="cursor-pointer hover:text-primary"
           onClick={() => click("Payment")}
         >
-          Payment
+          Pricing and Cancellation
         </Text>
         <Text
           className="cursor-pointer hover:text-primary"
           onClick={() => click("Privacy")}
         >
-          Privacy
+          Security and Privacy
         </Text>
       </div>
-      <div>{renderSwitch(displayFaq)}</div>
+      <div className=" xl:w-2/3">{renderSwitch(displayFaq)}</div>
     </div>
   );
 }

@@ -35,6 +35,18 @@ const reviews = [
     description:
       "I was skeptical at first, but the conversation with Isaac Newton was incredibly authentic and informative. The platform did an amazing job of making the interaction feel real. It's a fantastic educational tool that brings history to life in an engaging way.",
   },
+  {
+    name: "Jordan Smith",
+    ratings: 5,
+    description:
+      "Wow, just wow! Discussing the principles of calculus with Sir Isaac Newton himself was mind-blowing. The AI did an excellent job of mimicking Newton's thought process and mannerisms. This platform is a must-try for every science enthusiast.",
+  },
+  {
+    name: "Sophia Nguyen",
+    ratings: 5,
+    description:
+      "I was skeptical at first, but the conversation with Isaac Newton was incredibly authentic and informative. The platform did an amazing job of making the interaction feel real. It's a fantastic educational tool that brings history to life in an engaging way.",
+  },
 ];
 
 export default reviews;

@@ -7,9 +7,8 @@ import Thinking from "../../assets/thinking.jpg";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import MoreCard from "../../Components/Card/MoreCard";
 import Faq from "../../Components/Faq/Faq";
-import Testimonial from "../../Components/Card/Testimonial";
-import reviews from "../../data/review";
 import Footer from "../../Components/Footer/Footer";
+import Review from "../../Components/Reviews/Review";
 
 function HomePage() {
   return (
@@ -138,23 +137,7 @@ function HomePage() {
       <Faq />
 
       {/* <!-- Sixth Section --> */}
-      <Text
-        size="txtOpenSansBold50"
-        className="lg:pl-0 text-left lg:text-center text-5xl text-primary mt-16 px-10 mb-20"
-      >
-        What our clients says
-      </Text>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10">
-        {reviews.map((review) => {
-          return (
-            <Testimonial
-              rating={review.ratings}
-              name={review.name}
-              review={review.description}
-            />
-          );
-        })}
-      </div>
+      <Review />
 
       <Footer />
     </div>
