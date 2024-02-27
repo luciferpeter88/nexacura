@@ -12,9 +12,9 @@ function About() {
     <div>
       {/* first section */}
       <div className="flex flex-col">
-        <div className="flex gap-16 px-10 xl:px-32 pt-16 pb-20 xl:pb-60 text-white relative bg-custom-image bg-center bg-cover ">
+        <div className="flex gap-16 px-10 xl:px-32 pt-24 pb-20 xl:pb-60 text-white relative bg-custom-image bg-center bg-cover ">
           <Blacklayer />
-          <div className="flex flex-col gap-y-5 z-10 xl:w-4/5">
+          <div className="flex flex-col gap-y-5 z-10 xl:w-[90%]">
             <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
               About us
             </Text>
