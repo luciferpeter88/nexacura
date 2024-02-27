@@ -12,14 +12,14 @@ function About() {
     <div>
       {/* first section */}
       <div className="flex flex-col">
-        <div className="flex gap-16 px-10 pt-16 pb-20 xl:pb-60 text-white relative bg-custom-image bg-center bg-cover ">
+        <div className="flex gap-16 px-10 xl:px-32 pt-16 pb-20 xl:pb-60 text-white relative bg-custom-image bg-center bg-cover ">
           <Blacklayer />
-          <div className="flex flex-col gap-y-3 z-10 xl:w-4/5">
+          <div className="flex flex-col gap-y-5 z-10 xl:w-4/5">
             <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
               About us
             </Text>
             <Text
-              className="text-base text-gray-200"
+              className="text-xl text-gray-200"
               size="txtPoppinsRegular20"
               htmlTag="h3"
             >
@@ -47,17 +47,17 @@ function About() {
             />
           </div>
         </div>
-        <div className="xl:px-10 w-full z-50 xl:mt-[-10rem] order-first xl:order-last ">
+        <div className="xl:px-32 w-full z-50 xl:mt-[-10rem] order-first xl:order-last ">
           <img
             src={about}
             alt="about"
-            className="h-[35rem] xl:h-[40rem] w-full object-cover xl:rounded-lg"
+            className="h-[30rem] xl:h-[35rem] w-full object-cover xl:rounded-lg"
           />
         </div>
       </div>
       {/* second section */}
-      <div className=" xl:mt-20 flex flex-col xl:flex-row gap-10">
-        <div className="flex flex-col gap-y-5 justify-center px-10">
+      <div className=" xl:mt-20 flex flex-col xl:flex-row xl:px-32 gap-x-10 ">
+        <div className="flex flex-col gap-y-5 justify-center   px-10 xl:px-0 pt-16 pb-8 xl:pt-0 xl:pb-0">
           <Text
             className="text-5xl text-primary"
             size="txtOpenSansBold50"
@@ -89,7 +89,7 @@ function About() {
             backgroundColor="bg-secondary"
           />
         </div>
-        <div className="xl:px-10 order-first xl:order-last">
+        <div className=" order-first xl:order-last">
           <img
             src={about2}
             alt="about"
@@ -98,8 +98,8 @@ function About() {
         </div>
       </div>
       {/* third section */}
-      <div className=" xl:mt-20 flex flex-col xl:flex-row gap-10">
-        <div className="flex flex-col gap-y-5 justify-center px-10">
+      <div className=" xl:mt-20 flex flex-col xl:flex-row gap-10 xl:px-32 gap-x-10">
+        <div className="flex flex-col gap-y-5 justify-center px-10 xl:px-0 pt-8 xl:pt-0 xl:pb-0">
           <Text
             className="text-5xl text-primary"
             size="txtOpenSansBold50"
@@ -131,7 +131,7 @@ function About() {
             backgroundColor="bg-secondary"
           />
         </div>
-        <div className="xl:px-10 order-first mt-10 xl:mt-0">
+        <div className=" order-first mt-10 xl:mt-0">
           <img
             src={about2}
             alt="about"

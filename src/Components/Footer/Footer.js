@@ -15,7 +15,7 @@ function Footer() {
 
   return (
     <div>
-      <div class="grid grid-cols-1 md:grid-cols-4  gap-10 px-10 bg-primary p-10 mt-20">
+      <div class="grid grid-cols-1 md:grid-cols-4  gap-10 px-10 xl:px-32 bg-primary p-10 mt-20">
         <div class="flex flex-col gap-y-5 col-span-2">
           <div className=" text-secondary text-4xl font-bold">
             Nexa<span className="text-white font-semibold">Cura</span>

@@ -14,7 +14,7 @@ function HomePage() {
   return (
     <div className="">
       {/* <!-- First Section --> */}
-      <div className="grid grid-cols-1  lg:grid-cols-2 gap-16 px-10 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
+      <div className="grid grid-cols-1  lg:grid-cols-2 gap-16 px-10 xl:px-32 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
         <Blacklayer />
         <div className="flex flex-col gap-y-3 z-10 order-2 lg:order-1">
           <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
@@ -60,7 +60,7 @@ function HomePage() {
       </div>
 
       {/* <!-- Second Section --> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 mt-5 md:mt-[-3rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 xl:px-32 mt-5 md:mt-[-3rem]">
         <Card />
         <Card />
         <Card />
@@ -68,7 +68,7 @@ function HomePage() {
       </div>
 
       {/* <!-- Third Section --> */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-20 px-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-20 px-10 xl:px-32">
         <div className="flex flex-col gap-y-3 z-10 justify-center">
           <Text
             className="text-5xl text-primary"
@@ -105,7 +105,7 @@ function HomePage() {
       </div>
 
       {/* <!-- Fourth Section --> */}
-      <div class=" px-10">
+      <div class=" px-10 xl:px-32">
         <Text
           size="txtOpenSansBold50"
           className=" text-center text-5xl text-primary"
@@ -120,7 +120,7 @@ function HomePage() {
           fast and accurate results
         </Text>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 px-10 mt-10 xl:px-32">
         <MoreCard />
         <MoreCard />
         <MoreCard />

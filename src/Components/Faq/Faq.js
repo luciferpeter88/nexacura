@@ -30,7 +30,7 @@ function Faq() {
   };
 
   return (
-    <div className="flex px-10 gap-x-20 mt-20 flex-col lg:flex-row">
+    <div className="flex px-10 xl:px-32 gap-x-20 mt-20 flex-col lg:flex-row">
       <div className=" flex justify-between lg:flex-col lg:justify-normal mb-20 text-lg relative">
         <div className="absolute top-0 right-[-2rem] h-[10rem] w-[2.5px] bg-primary hidden lg:block"></div>
         <Text

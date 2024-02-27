@@ -7,7 +7,7 @@ function Nav() {
   const style = "hover:text-secondary transition duration-300 ease-in-out";
   return (
     <React.Fragment>
-      <nav className="flex px-10 py-3 justify-between text-lg items-center font-medium text-gray-400">
+      <nav className="flex px-10 xl:px-32 py-3 justify-between text-lg items-center font-medium text-gray-400">
         <div className=" text-primary text-4xl font-bold">
           Nexa<span className="text-secondary font-semibold">Cura</span>
         </div>
