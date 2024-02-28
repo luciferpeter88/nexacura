@@ -7,6 +7,9 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Pricing from "./Pages/Pricing/Pricing";
 import Nav from "./Components/Nav/Nav";
+import VerifyingEmail from "./Pages/VerifyingEmail/VerifyingEmail";
+import VerifiedEmail from "./Pages/VerifiedEmail/VerifiedEmail";
+import SelectPlan from "./Pages/SelectPlan/SelectPlan";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/verifying-email" element={<VerifyingEmail />} />
+            <Route path="/verified-email" element={<VerifiedEmail />} />
+            <Route path="/select-plan" element={<SelectPlan />} />
           </Route>
         </Routes>
       </BrowserRouter>

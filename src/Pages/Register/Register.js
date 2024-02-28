@@ -10,6 +10,7 @@ import {
 import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
+
 // Import necessary icons
 
 const iconSelector = (name) => {
@@ -98,7 +99,7 @@ function Register() {
                   hoverBorderColor="hover:border-secondary"
                   textColor="text-white"
                   hoverTextColor="hover:text-secondary"
-                  buttonText="Login"
+                  buttonText="Register"
                   hoverBackgroundColor="hover:bg-transparent"
                   backgroundColor="bg-primary"
                   width="w-full"

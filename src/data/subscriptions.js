@@ -9,8 +9,6 @@ const subscriptions = [
       "10 GB Storage",
       "6 Team Members",
       "Unlimited Book Mark",
-      "Unlimited basic feature",
-      "Unlimited updates",
     ],
   },
   {
@@ -23,8 +21,6 @@ const subscriptions = [
       "100 GB Storage",
       "15 Team Members",
       "Unlimited Book Mark",
-      "Unlimited basic feature",
-      "Unlimited updates",
     ],
     popular: true,
   },
@@ -38,8 +34,6 @@ const subscriptions = [
       "300 GB Storage",
       "50 Team Members",
       "Unlimited Book Mark",
-      "Unlimited basic feature",
-      "Unlimited updates",
     ],
   },
 ];

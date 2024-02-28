@@ -11,7 +11,7 @@ function SubscriptionCard({ name, price, duration, benefits, popular }) {
       }`}
     >
       <div className="text-center p-4 bg-gradient-to-r from-primary to-[#11a5e9]">
-        <Text className="text-2xl text-white font-semibold mb-1">{name}</Text>
+        <Text className="text-xl text-white font-semibold mb-1">{name}</Text>
         <Text className="text-xs text-white">{duration}</Text>
       </div>
       <div className="text-center -mt-8 mb-4">
