@@ -28,11 +28,15 @@ function Contact() {
   return (
     <div>
       <Text
-        className="text-5xl text-center text-primary mt-24 mb-10"
+        className="text-5xl text-center text-primary mt-24 mb-5"
         size="txtOpenSansBold50"
         htmlTag="h1"
       >
         Contact Us
+      </Text>
+      <Text className="text-gray-500 text-lg text-center mb-10">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
       </Text>
       <div className="my-6  xl:px-32 ">
         <div className="grid lg:grid-cols-12 xl:p-2  mx-auto   bg-white lg:shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
