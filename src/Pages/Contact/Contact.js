@@ -1,95 +1,103 @@
 import React from "react";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
 import Text from "../../Components/Text/Text";
-import Footer from "../../Components/Footer/Footer";
-import { IoMail, IoLocationSharp } from "react-icons/io5";
-import { FaLinkedin } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
-import FormField from "../../Components/FromField/FormField";
-import { IoPerson } from "react-icons/io5";
+import Input from "../../Components/Input/Input";
 import OutlineButton from "../../Components/Button/OutlineButton";
+import { FaEarthAfrica, FaLocationArrow } from "react-icons/fa6";
+import Footer from "../../Components/Footer/Footer";
+
+const IconsContact = ({ title, reactIcon }) => {
+  return (
+    <div className="flex items-center space-x-5">
+      <div className=" h-10 w-10 border-2 border-[#11a5e9] rounded-full  text-white text-xl font-bold flex items-center justify-center shrink-0">
+        {reactIcon}
+      </div>
+      <Text className="text-lg text-white" size="txtPoppinsRegular18">
+        {title}
+      </Text>
+    </div>
+  );
+};
 
 function Contact() {
   return (
-    <div className="">
-      <div className=" xl:px-32">
-        <Text
-          className="text-5xl text-center text-primary mt-24"
-          size="txtOpenSansBold50"
-          htmlTag="h1"
-        >
-          Contact Us
-        </Text>
-        <Text className="text-gray-600 text-center mt-3 text-lg">
-          Any question or remarks? Just write us a message!
-        </Text>
-        <div className=" mt-8 flex flex-col xl:flex-row xl:rounded-lg xl:shadow-2xl xl:p-3">
-          <div className="p-8 xl:w-[45%] bg-primary flex flex-col rounded-md relative overflow-hidden">
-            <div className="absolute right-[-10%] bottom-[-20%] bg-white opacity-[10%] xl:w-80 xl:h-80 rounded-full"></div>
-            <div className="absolute right-[18%] bottom-[10%] bg-white opacity-[10%] xl:w-44 xl:h-44 rounded-full"></div>
+    <div>
+      <Text
+        className="text-5xl text-center text-primary mt-24 mb-10"
+        size="txtOpenSansBold50"
+        htmlTag="h1"
+      >
+        Contact Us
+      </Text>
+      <div className="my-6  xl:px-32 ">
+        <div className="grid lg:grid-cols-12 xl:p-2  mx-auto   bg-white lg:shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
+          <div className="bg-primary xl:rounded-md p-10 flex flex-col justify-between gap-y-16 lg:col-span-4">
             <div>
-              <Text className="text-4xl text-white" size="txtOpenSansBold50">
-                Contact Information
-              </Text>
-              <Text className="text-white text-2xl" size="txtOpenSansRegular20">
+              <Text className=" text-3xl text-white">Contact Information</Text>
+              <Text className="text-white text-lg">
                 Say something to start a live chat!
               </Text>
             </div>
-            <div className="xl:pt-32 pt-16 pb-32 xl:pb-56 flex flex-col gap-y-10">
-              <div className=" flex gap-x-10 items-center">
-                <Text className="text-3xl text-white" size="txtOpenSansBold50">
-                  <IoMail />
-                </Text>
-                <Text className="text-white text-xl" size="txtOpenSansBold50">
-                  support@nexacura.com
-                </Text>
-              </div>
-              <div className=" flex gap-x-10 items-center">
-                <Text className="text-3xl text-white" size="txtOpenSansBold30">
-                  <IoMail />
-                </Text>
-                <Text className="text-white text-xl" size="txtOpenSansBold50">
-                  support@nexacura.com
-                </Text>
-              </div>
-              <div className=" flex gap-x-10 items-center">
-                <Text className="text-3xl text-white" size="txtOpenSansBold30">
-                  <IoLocationSharp />
-                </Text>
-                <Text className="text-white text-xl" size="txtOpenSansBold50">
-                  Glasgow,United Kingdom
-                </Text>
-              </div>
+            <div className=" flex flex-col gap-y-5">
+              <IconsContact
+                title="Address: Glasgow, United Kingdom"
+                reactIcon={<FaLocationArrow />}
+              />
+              <IconsContact
+                title="Email: aipscycholohist@gmail.com"
+                reactIcon={<FaEnvelope />}
+              />
+
+              <IconsContact
+                title="Website: www.aipscycholohist.com"
+                reactIcon={<FaEarthAfrica />}
+              />
             </div>
-            <div className="flex text-white text-2xl gap-3 ">
-              <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                <FaLinkedin className=" cursor-pointer text-secondary duration-300 transition ease-out" />
-              </div>
-              <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                <FaFacebook className=" cursor-pointer text-secondary duration-300 transition ease-out" />
-              </div>
-              <div className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-                <FaYoutube className=" cursor-pointer text-secondary duration-300 transition ease-out" />
-              </div>
+            <div className="">
+              <ul className="flex mt-3 space-x-4">
+                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <div>
+                    <FaFacebook />
+                  </div>
+                </li>
+                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <div>
+                    <FaLinkedin />
+                  </div>
+                </li>
+                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <div>
+                    <FaInstagram />
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className=" xl:w-[60%] py-10 xl:pl-20 xl:pr-60 space-y-5 px-10 xl:px-0">
-            <FormField
-              label="Full Name"
-              placeholder="John Wick"
-              icon={<IoPerson />}
+          <form className="space-y-4 p-10 lg:col-span-7">
+            <Input label="Name" type="text" name="name" placeholder="Name" />
+            <Input
+              label="Email"
+              type="email"
+              name="email"
+              placeholder="Email"
             />
-            <FormField
-              label="Full Name"
-              placeholder="John Wick"
-              icon={<IoPerson />}
+            <Input
+              label="Subject"
+              type="text"
+              name="subject"
+              placeholder="Subject"
             />
-            <FormField
-              label="Full Name"
-              placeholder="John Wick"
-              icon={<IoPerson />}
+            <Input
+              label="Message"
+              type="textarea"
+              name="message"
+              placeholder="Message"
             />
-            <FormField label="Your Message" type="textbox" />
             <OutlineButton
               borderColor="border-primary"
               hoverBorderColor="hover:border-secondary"
@@ -98,9 +106,9 @@ function Contact() {
               buttonText="Send Message"
               hoverBackgroundColor="hover:bg-transparent"
               backgroundColor="bg-primary"
-              width="w-full"
+              width="w-[20rem]"
             />
-          </div>
+          </form>
         </div>
       </div>
       <Footer />
