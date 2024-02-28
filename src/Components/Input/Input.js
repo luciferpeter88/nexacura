@@ -12,7 +12,7 @@ function Input({ label, type, placeholder, name }) {
           name={name}
           id={name}
           placeholder={placeholder}
-          className="w-full rounded-md py-2.5 px-4 border text-sm outline-secondary"
+          className="w-full  py-2.5 px-4 border-b border-gray-300 focus:border-secondary text-sm outline-none"
         />
       ) : (
         <textarea
