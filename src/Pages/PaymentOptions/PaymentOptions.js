@@ -11,16 +11,8 @@ function PaymentOption({
   onChange,
 }) {
   return (
-    <div className="flex items-center bg-gray-100 rounded px-4 py-8">
-      <div className="w-10"></div>
-      <input
-        type="radio"
-        className="w-6 h-6 cursor-pointer"
-        id={id}
-        name={name}
-        onChange={onChange}
-      />
-      <label htmlFor={id} className=" ml-4 flex gap-2 cursor-pointer">
+    <div className="flex items-center bg-gray-100  px-4 py-6 rounded-lg">
+      <label htmlFor={id} className="flex gap-2 cursor-pointer">
         {imageUrls.map((url, index) => (
           <img
             key={index}
@@ -30,6 +22,13 @@ function PaymentOption({
           />
         ))}
       </label>
+      <input
+        type="radio"
+        className="w-5 h-5 cursor-pointer ml-auto"
+        id={id}
+        name={name}
+        onChange={onChange}
+      />
     </div>
   );
 }
@@ -43,7 +42,7 @@ function PaymentOptions() {
       <Text className="text-2xl text-center text-primary font-semibold">
         Select Payments Method
       </Text>
-      <div className="grid gap-4 grid-cols-1 w-96 mx-auto mt-10">
+      <div className="grid gap-4 grid-cols-1 w-[25rem] mx-auto mt-10">
         <PaymentOption
           id="card"
           imageUrls={[
