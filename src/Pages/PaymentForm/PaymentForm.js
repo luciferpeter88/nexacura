@@ -23,7 +23,7 @@ function PaymentForm() {
     <div className="font-sans bg-white px-10 mt-24 flex justify-center">
       <div className="w-[30rem]">
         <Text className="text-2xl text-center text-primary font-semibold">
-          Select Payments Method
+          Enter Card Details
         </Text>
         <Text className="text-lg text-center text-gray-500">
           Simple transparent pricing
