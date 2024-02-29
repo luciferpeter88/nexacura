@@ -11,6 +11,7 @@ import VerifyingEmail from "./Pages/VerifyingEmail/VerifyingEmail";
 import VerifiedEmail from "./Pages/VerifiedEmail/VerifiedEmail";
 import SelectPlan from "./Pages/SelectPlan/SelectPlan";
 import PaymentOptions from "./Pages/PaymentOptions/PaymentOptions";
+import PaymentForm from "./Pages/PaymentForm/PaymentForm";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/verified-email" element={<VerifiedEmail />} />
             <Route path="/select-plan" element={<SelectPlan />} />
             <Route path="/payment-options" element={<PaymentOptions />} />
+            <Route path="/payment-form" element={<PaymentForm />} />
           </Route>
         </Routes>
       </BrowserRouter>
