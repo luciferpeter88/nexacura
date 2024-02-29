@@ -5,8 +5,8 @@ import OutlineButton from "../../Components/Button/OutlineButton";
 
 function VerifiedEmail() {
   return (
-    <div className=" flex items-center justify-center h-screen">
-      <div className="flex flex-col items-center justify-center">
+    <div className=" h-screen flex flex-col mt-24 ">
+      <div className="flex flex-col items-center justify-center gap-y-5">
         <div className=" w-44 h-44 rounded-full bg-yellow-200 flex justify-center items-center ">
           <div className="  w-24 h-24 rounded-full bg-secondary flex justify-center items-center   ">
             <FaCheck className=" text-white text-4xl" />
@@ -27,7 +27,7 @@ function VerifiedEmail() {
           buttonText="Continue"
           hoverBackgroundColor="hover:bg-transparent"
           backgroundColor="bg-primary"
-          width=" w-full"
+          width=" w-[10rem]"
         />
       </div>
     </div>

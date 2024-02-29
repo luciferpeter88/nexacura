@@ -60,7 +60,7 @@ function Nav() {
 
   return (
     <React.Fragment>
-      <nav className="lg:flex px-10 hidden  xl:px-32 py-3 justify-between text-lg items-center font-medium text-gray-400">
+      <nav className="lg:flex px-10 hidden  xl:px-32  py-3 justify-between text-lg items-center font-medium text-gray-400">
         <div className=" text-primary text-4xl font-bold">
           Nexa<span className="text-secondary font-semibold">Cura</span>
         </div>
