@@ -1,10 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import SideNavDashBoard from "./SideNavDashBoard";
 function DashboardNav() {
   return (
     <React.Fragment>
-      <h1>DashboardNav</h1>
-      <Outlet />
+      <div className="flex">
+        <SideNavDashBoard />
+
+        <Outlet />
+      </div>
     </React.Fragment>
   );
 }
