@@ -14,33 +14,42 @@ import PaymentOptions from "./Pages/PaymentOptions/PaymentOptions";
 import PaymentForm from "./Pages/PaymentForm/PaymentForm";
 import ReviewPayment from "./Pages/ReviewPayment/ReviewPayment";
 import PurchaseSuccessful from "./Pages/PurchaseSuccessful/PurchaseSuccessful";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
+  const loggedIn = true;
+
   return (
-    <React.Fragment>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Nav />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/verifying-email" element={<VerifyingEmail />} />
-            <Route path="/verified-email" element={<VerifiedEmail />} />
-            <Route path="/select-plan" element={<SelectPlan />} />
-            <Route path="/payment-options" element={<PaymentOptions />} />
-            <Route path="/payment-form" element={<PaymentForm />} />
-            <Route path="/review-payment" element={<ReviewPayment />} />
-            <Route
-              path="/purchase-successful"
-              element={<PurchaseSuccessful />}
-            />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </React.Fragment>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Nav />}>
+          {loggedIn ? (
+            <>
+              <Route index element={<Dashboard />} />
+              <Route path="/payment-options" element={<PaymentOptions />} />
+              <Route path="/payment-form" element={<PaymentForm />} />
+              <Route path="/review-payment" element={<ReviewPayment />} />
+              <Route
+                path="/purchase-successful"
+                element={<PurchaseSuccessful />}
+              />
+            </>
+          ) : (
+            <>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/select-plan" element={<SelectPlan />} />
+              <Route path="/verifying-email" element={<VerifyingEmail />} />
+              <Route path="/verified-email" element={<VerifiedEmail />} />
+            </>
+          )}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
