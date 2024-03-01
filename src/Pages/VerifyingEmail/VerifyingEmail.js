@@ -61,7 +61,7 @@ function VerifyingEmail() {
               buttonText="Send"
               hoverBackgroundColor="hover:bg-transparent"
               backgroundColor="bg-primary"
-              width=" w-[5rem]"
+              width=" w-[6rem]"
             />
             <button
               className="inline-block align-baseline font-bold text-sm text-secondary hover:text-primary ml-4"

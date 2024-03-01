@@ -6,6 +6,7 @@ import OutlineButton from "../../Components/Button/OutlineButton";
 import about2 from "../../assets/about2.jpeg";
 import Review from "../../Components/Reviews/Review";
 import Footer from "../../Components/Footer/Footer";
+import OurTeam from "../../Components/OurTeam/OurTeam";
 
 function About() {
   return (
@@ -140,6 +141,7 @@ function About() {
         </div>
       </div>
       {/* fourth section */}
+      <OurTeam />
       <Review />
       <Footer />
     </div>
