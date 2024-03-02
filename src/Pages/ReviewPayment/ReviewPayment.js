@@ -6,7 +6,7 @@ import Layout from "../../Components/Dashboard/Layout";
 function ReviewPayment() {
   return (
     <Layout>
-      <div className="font-sans bg-white px-10 flex items-center h-3/4 justify-center">
+      <div className="font-sans bg-white px-10 2xl:mt-20 mt-10 h-full flex justify-center">
         <div className="w-[30rem]">
           <Text className="text-2xl text-center text-primary font-semibold">
             Review Payments
