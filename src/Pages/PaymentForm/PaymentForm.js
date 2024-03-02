@@ -22,7 +22,7 @@ function Input({ label, type, placeholder, className, id }) {
 function PaymentForm() {
   return (
     <Layout>
-      <div className="font-sans bg-white px-10 2xl:mt-20 mt-10 h-full flex justify-center">
+      <div className="font-sans bg-white px-10 2xl:mt-20  h-full flex justify-center">
         <div className="w-[30rem]">
           <Text className="text-2xl text-center text-primary font-semibold">
             Enter Card Details

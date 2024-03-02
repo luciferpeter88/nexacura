@@ -12,7 +12,7 @@ function PaymentOption({
   onChange,
 }) {
   return (
-    <div className="flex items-center bg-gray-100  px-4 py-6 rounded-lg">
+    <div className="flex items-center bg-gray-100  px-4   py-6 lg:py-3 2xl:py-6 rounded-lg">
       <label htmlFor={id} className="flex gap-2 cursor-pointer">
         {imageUrls.map((url, index) => (
           <img
@@ -40,7 +40,7 @@ function PaymentOptions() {
   };
   return (
     <Layout>
-      <div className="2xl:mt-20 mt-10 h-full ">
+      <div className="2xl:mt-20 xl:my-30  h-full ">
         <Text className="text-2xl text-center text-primary font-semibold">
           Select Payments Method
         </Text>
