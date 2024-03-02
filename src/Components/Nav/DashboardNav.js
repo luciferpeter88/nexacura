@@ -6,7 +6,6 @@ function DashboardNav() {
     <React.Fragment>
       <div className="flex">
         <SideNavDashBoard />
-
         <Outlet />
       </div>
     </React.Fragment>
