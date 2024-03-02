@@ -7,6 +7,7 @@ import ReviewPayment from "../../Pages/ReviewPayment/ReviewPayment";
 import PurchaseSuccessful from "../../Pages/PurchaseSuccessful/PurchaseSuccessful";
 import Mysubscription from "../../Pages/MySubscription/Mysubscription";
 import Nav from "../Nav/Nav";
+import Help from "../../Pages/Help/Help";
 
 function DashboardRoutes() {
   return (
@@ -19,6 +20,7 @@ function DashboardRoutes() {
           <Route path="/payment-form" element={<PaymentForm />} />
           <Route path="/review-payment" element={<ReviewPayment />} />
           <Route path="/purchase-successful" element={<PurchaseSuccessful />} />
+          <Route path="/help" element={<Help />} />
         </Route>
       </Routes>
     </BrowserRouter>
