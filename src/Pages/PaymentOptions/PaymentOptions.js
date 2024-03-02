@@ -40,7 +40,7 @@ function PaymentOptions() {
   };
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center h-3/4">
+      <div className="mt-20 h-full overflow-scroll">
         <Text className="text-2xl text-center text-primary font-semibold">
           Select Payments Method
         </Text>
