@@ -8,6 +8,8 @@ import PurchaseSuccessful from "../../Pages/PurchaseSuccessful/PurchaseSuccessfu
 import Mysubscription from "../../Pages/MySubscription/Mysubscription";
 import Nav from "../Nav/Nav";
 import Help from "../../Pages/Help/Help";
+import MyAccount from "../../Pages/MyAccount/MyAccount";
+import NotFound from "../../Pages/NotFound/NotFound";
 
 function DashboardRoutes() {
   return (
@@ -21,7 +23,9 @@ function DashboardRoutes() {
           <Route path="/review-payment" element={<ReviewPayment />} />
           <Route path="/purchase-successful" element={<PurchaseSuccessful />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/my-account" element={<MyAccount />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
