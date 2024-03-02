@@ -1,6 +1,8 @@
 import React from "react";
 import ProfileDashNav from "../../Components/ProfileDashNav/ProfileDashNav";
 import SearchBar from "../../Components/SearchBar/SearchBar";
+import TreatmentComponent from "../../Components/TreatmentComponent/TreatmentComponent";
+import treatmentData from "../../data/treatmentData";
 
 function Dashboard() {
   return (
@@ -9,6 +11,10 @@ function Dashboard() {
       <div className="flex">
         <div className="w-56 border-2 border-green-500 min-h-screen">
           <SearchBar />
+          {treatmentData.map((treatment, index) => (
+            <TreatmentComponent key={index} text={treatment} />
+          ))}
+          <TreatmentComponent text="Anxiety disorder" />
         </div>
         <div
           className=" min-h-screen bg-red-500"
