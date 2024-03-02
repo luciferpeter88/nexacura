@@ -7,7 +7,7 @@ function Dashboard() {
     <div className="p-3 pr-10" style={{ width: "calc(100% - 18rem)" }}>
       <ProfileDashNav />
       <div className="flex">
-        <div className="w-56 min-h-screen">
+        <div className="w-56 border-2 border-green-500 min-h-screen">
           <SearchBar />
         </div>
         <div
