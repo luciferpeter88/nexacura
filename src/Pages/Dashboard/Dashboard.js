@@ -1,15 +1,19 @@
 import React from "react";
-import Text from "../../Components/Text/Text";
-import user from "../../assets/users/49.jpg";
+import ProfileDashNav from "../../Components/ProfileDashNav/ProfileDashNav";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 
 function Dashboard() {
   return (
     <div className="p-3 pr-10" style={{ width: "calc(100% - 18rem)" }}>
-      <div className="flex gap-x-3 items-center justify-end">
-        <img src={user} alt="profile" className="rounded-full h-10 w-10" />
-        <Text size="lg" weight="bold" className="">
-          John Wick
-        </Text>
+      <ProfileDashNav />
+      <div className="flex">
+        <div className="w-56 min-h-screen">
+          <SearchBar />
+        </div>
+        <div
+          className=" min-h-screen bg-red-500"
+          style={{ width: "calc(100% - 14rem)" }}
+        ></div>
       </div>
     </div>
   );

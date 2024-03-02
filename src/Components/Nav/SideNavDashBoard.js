@@ -13,7 +13,7 @@ function SideNavDashBoard() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col h-full justify-between">
+        <div className="flex flex-col h-full justify-between py-10">
           <div>
             {sidebarItems.map((item) => (
               <SideBarData key={item.label} {...item} />
