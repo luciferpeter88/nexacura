@@ -7,7 +7,7 @@ import subscriptions from "../../data/subscriptions";
 function Mysubscription() {
   return (
     <Layout>
-      <div className=" h-full overflow-scroll pt-12 pb-20">
+      <div className=" h-full  pt-12 pb-20">
         <Text className="text-2xl text-primary font-semibold">
           My Subscription
         </Text>
