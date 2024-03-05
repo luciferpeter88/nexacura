@@ -1,8 +1,11 @@
 import React from "react";
+import { Avatar } from "./Avatar";
 
 function AvatarMain() {
   return (
-    <div className="  bg-red-500" style={{ width: "calc(100% - 14rem)" }}></div>
+    <React.Fragment>
+      <Avatar />
+    </React.Fragment>
   );
 }
 

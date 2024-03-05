@@ -36,7 +36,7 @@ function MyAccount() {
   return (
     <Layout>
       <div className="flex w-full flex-col gap-3 bg-white px-3 text-[#161931] md:flex-row">
-        <main className=" h-full w-full py-1 md:w-2/3 lg:w-3/4">
+        <main className=" h-full w-full py-1  xl:w-4/5">
           <div className="w-full  sm:max-w-xl sm:rounded-lg">
             <Text className="text-2xl font-bold sm:text-xl text-primary">
               Public Profile
