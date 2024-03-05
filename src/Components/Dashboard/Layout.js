@@ -3,10 +3,7 @@ import ProfileDashNav from "../../Components/ProfileDashNav/ProfileDashNav";
 
 function Layout({ children }) {
   return (
-    <div
-      className="p-3 pr-10 h-screen  overflow-scroll"
-      style={{ width: "calc(100% - 18rem)" }}
-    >
+    <div className="p-3 lg:pr-10 h-screen  overflow-scroll w-full lg:w-custom">
       <ProfileDashNav />
       {children}
     </div>

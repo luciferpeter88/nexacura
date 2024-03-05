@@ -11,7 +11,7 @@ function Mysubscription() {
         <Text className="text-2xl text-primary font-semibold">
           My Subscription
         </Text>
-        <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-8 mt-6 max-sm:max-w-sm max-sm:mx-auto">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-8 mt-6 ">
           {subscriptions.map((subscription) => (
             <SubscriptionCard key={subscription.id} {...subscription} />
           ))}

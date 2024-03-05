@@ -4,7 +4,7 @@ import { sidebarItems, bottomSidebarItems } from "../../data/SideBarData";
 
 function SideNavDashBoard() {
   return (
-    <div className=" w-72 h-screen ">
+    <div className=" w-0 overflow-hidden lg:w-72 h-screen ">
       <div className="p-3 overflow-y-auto text-center bg-gray-100 h-full flex flex-col">
         <div className="text-xl">
           <div className=" flex items-center">
