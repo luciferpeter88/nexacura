@@ -86,8 +86,8 @@ function Register() {
                   register={register}
                   required="Full name is required"
                 />
-                <span className="text-red-500 text-xs  font-bold">
-                  {errors.fullName ? errors.fullName.message : null}
+                <span className=" h-3 text-red-500 text-xs  font-bold">
+                  {errors.fullName ? errors.fullName.message : ""}
                 </span>
                 <FormInput
                   label="Email"
@@ -102,8 +102,8 @@ function Register() {
                   }}
                 />
 
-                <span className="text-red-500 text-xs  font-bold">
-                  {errors.email ? errors.email.message : null}
+                <span className="h-3 text-red-500 text-xs  font-bold">
+                  {errors.email ? errors.email.message : ""}
                 </span>
                 <FormInput
                   label="Password"
@@ -118,8 +118,8 @@ function Register() {
                       "Password must be at least 8 characters, include a letter and a number",
                   }}
                 />
-                <span className="text-red-500 text-xs  font-bold">
-                  {errors.password ? errors.password.message : null}
+                <span className="h-3 text-red-500 text-xs  font-bold">
+                  {errors.password ? errors.password.message : ""}
                 </span>
                 <FormInput
                   label="Confirm Password"
@@ -133,7 +133,7 @@ function Register() {
                       value === password || "Passwords do not match",
                   }}
                 />
-                <span className="text-red-500 text-xs  font-bold">
+                <span className="h-3 text-red-500 text-xs  font-bold">
                   {errors.confirmPassword
                     ? errors.confirmPassword.message
                     : null}
