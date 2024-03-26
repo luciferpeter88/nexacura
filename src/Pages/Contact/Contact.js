@@ -10,6 +10,7 @@ import Input from "../../Components/Input/Input";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import { FaEarthAfrica, FaLocationArrow } from "react-icons/fa6";
 import Footer from "../../Components/Footer/Footer";
+import { useForm } from "react-hook-form";
 
 const IconsContact = ({ title, reactIcon }) => {
   return (
@@ -25,6 +26,17 @@ const IconsContact = ({ title, reactIcon }) => {
 };
 
 function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   return (
     <div>
       <Text
@@ -82,25 +94,58 @@ function Contact() {
               </ul>
             </div>
           </div>
-          <form className="space-y-4 p-10 lg:col-span-7">
-            <Input label="Name" type="text" name="name" placeholder="Name" />
+
+          <form
+            className="space-y-4 p-10 lg:col-span-7"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Input
+              label="Name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              register={register("name", {
+                required: "Name is required",
+                minLength: {
+                  value: 3,
+                  message: "Name should be at least 3 characters",
+                },
+              })}
+              errors={errors.name}
+            />
             <Input
               label="Email"
               type="email"
               name="email"
               placeholder="Email"
+              register={register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                  message: "Invalid email format",
+                },
+              })}
+              errors={errors.email}
             />
             <Input
               label="Subject"
               type="text"
               name="subject"
               placeholder="Subject"
+              register={register("subject", {
+                required: "Subject is required",
+              })}
+              errors={errors.subject}
             />
             <Input
               label="Message"
               type="textarea"
               name="message"
               placeholder="Message"
+              register={register("message", {
+                required: "Message is required",
+              })}
+              errors={errors.message}
             />
             <OutlineButton
               borderColor="border-primary"
