@@ -1,7 +1,5 @@
 import React from "react";
 import Text from "../../Components/Text/Text";
-import { Bubble, Circle } from "../../Components/Bubble/Bubble";
-import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 import Card from "../../Components/Card/Card";
 import Thinking from "../../assets/thinking.jpg";
 import OutlineButton from "../../Components/Button/OutlineButton";
@@ -9,13 +7,14 @@ import MoreCard from "../../Components/Card/MoreCard";
 import Faq from "../../Components/Faq/Faq";
 import Footer from "../../Components/Footer/Footer";
 import Review from "../../Components/Reviews/Review";
+import { NavLink } from "react-router-dom";
+import hero from "../../assets/hero-image.png";
 
 function HomePage() {
   return (
     <div className="">
       {/* <!-- First Section --> */}
       <div className="grid grid-cols-1  lg:grid-cols-2 gap-16 px-10 xl:px-32 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
-        <Blacklayer />
         <div className="flex flex-col gap-y-3 z-10 order-2 lg:order-1">
           <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
             Chat with History's Legends Through AI
@@ -33,29 +32,21 @@ function HomePage() {
           </Text>
 
           <div>
-            <OutlineButton
-              borderColor="border-secondary"
-              hoverBorderColor="hover:border-secondary"
-              textColor="text-white"
-              hoverTextColor="hover:text-secondary"
-              buttonText="Try Now"
-              hoverBackgroundColor="hover:bg-transparent"
-              backgroundColor="bg-secondary"
-            />
+            <NavLink to="/register">
+              <OutlineButton
+                borderColor="border-secondary"
+                hoverBorderColor="hover:border-secondary"
+                textColor="text-white"
+                hoverTextColor="hover:text-secondary"
+                buttonText="Try Now"
+                hoverBackgroundColor="hover:bg-transparent"
+                backgroundColor="bg-secondary"
+              />
+            </NavLink>
           </div>
         </div>
-        <div className="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10 pt-10  order-1 lg:order-2">
-          <div className="flex items-center gap-x-10 justify-end ">
-            <Circle />
-            <Bubble />
-          </div>
-          <div className="flex items-center gap-x-10">
-            <Bubble />
-            <Circle />
-          </div>
-          <div className="flex justify-center">
-            <Circle />
-          </div>
+        <div className="  w-[25rem] mx-auto flex flex-col gap-y-5 z-10   order-1 lg:order-2">
+          <img src={hero} alt="hero" className="" />
         </div>
       </div>
 
@@ -85,15 +76,17 @@ function HomePage() {
             life in interactive and educational chats.
           </Text>
 
-          <OutlineButton
-            borderColor="border-secondary"
-            hoverBorderColor="hover:border-secondary"
-            textColor="text-white"
-            hoverTextColor="hover:text-secondary"
-            buttonText="Try Now"
-            hoverBackgroundColor="hover:bg-transparent"
-            backgroundColor="bg-secondary"
-          />
+          <NavLink to="/register">
+            <OutlineButton
+              borderColor="border-secondary"
+              hoverBorderColor="hover:border-secondary"
+              textColor="text-white"
+              hoverTextColor="hover:text-secondary"
+              buttonText="Try Now"
+              hoverBackgroundColor="hover:bg-transparent"
+              backgroundColor="bg-secondary"
+            />
+          </NavLink>
         </div>
         <div className=" order-first lg:order-last">
           <img

@@ -25,9 +25,15 @@ function Footer() {
             life in interactive and educational chats.
           </Text>
           <div className="flex text-white text-xl gap-3 ">
-            <FaLinkedin className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
-            <FaFacebook className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
-            <FaYoutube className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            <a href="https://www.linkedin.com/">
+              <FaLinkedin className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            </a>
+            <a href="https://www.facebook.com/">
+              <FaFacebook className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            </a>
+            <a href="https://www.youtube.com/">
+              <FaYoutube className=" cursor-pointer hover:text-secondary duration-300 transition ease-out" />
+            </a>
           </div>
         </div>
         <div class="flex flex-col gap-y-3">

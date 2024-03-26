@@ -7,9 +7,9 @@ const teamMembers = [
     imageSrc:
       "https://images.pexels.com/photos/3785084/pexels-photo-3785084.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     socialLinks: [
-      { href: "#", icon: <FaFacebook /> },
-      { href: "#", icon: <FaTwitter /> },
-      { href: "#", icon: <FaLinkedin /> },
+      { href: "https://www.facebook.com/", icon: <FaFacebook /> },
+      { href: "https://twitter.com/", icon: <FaTwitter /> },
+      { href: "https://www.linkedin.com/feed/", icon: <FaLinkedin /> },
     ],
   },
   {
@@ -18,9 +18,9 @@ const teamMembers = [
     imageSrc:
       "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     socialLinks: [
-      { href: "#", icon: <FaFacebook /> },
-      { href: "#", icon: <FaTwitter /> },
-      { href: "#", icon: <FaLinkedin /> },
+      { href: "https://www.facebook.com/", icon: <FaFacebook /> },
+      { href: "https://twitter.com/", icon: <FaTwitter /> },
+      { href: "https://www.linkedin.com/feed/", icon: <FaLinkedin /> },
     ],
   },
 ];

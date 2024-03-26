@@ -1,12 +1,12 @@
 import React from "react";
 import Text from "../../Components/Text/Text";
-import Blacklayer from "../../Components/BlackLayer/Blacklayer";
 import about from "../../assets/about.jpeg";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import about2 from "../../assets/about2.jpeg";
 import Review from "../../Components/Reviews/Review";
 import Footer from "../../Components/Footer/Footer";
 import OurTeam from "../../Components/OurTeam/OurTeam";
+import { NavLink } from "react-router-dom";
 
 function About() {
   return (
@@ -14,7 +14,6 @@ function About() {
       {/* first section */}
       <div className="flex flex-col">
         <div className="flex gap-16 px-10 xl:px-32 pt-24 pb-20 xl:pb-60 text-white relative bg-custom-image bg-center bg-cover ">
-          <Blacklayer />
           <div className="flex flex-col gap-y-5 z-10 xl:w-[90%]">
             <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
               About us
@@ -37,15 +36,17 @@ function About() {
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.
             </Text>
-            <OutlineButton
-              borderColor="border-secondary"
-              hoverBorderColor="hover:border-secondary"
-              textColor="text-white"
-              hoverTextColor="hover:text-secondary"
-              buttonText="Contact"
-              hoverBackgroundColor="hover:bg-transparent"
-              backgroundColor="bg-secondary"
-            />
+            <NavLink to="/contact">
+              <OutlineButton
+                borderColor="border-secondary"
+                hoverBorderColor="hover:border-secondary"
+                textColor="text-white"
+                hoverTextColor="hover:text-secondary"
+                buttonText="Contact"
+                hoverBackgroundColor="hover:bg-transparent"
+                backgroundColor="bg-secondary"
+              />
+            </NavLink>
           </div>
         </div>
         <div className="xl:px-32 w-full z-50 xl:mt-[-10rem] order-first xl:order-last ">
@@ -80,15 +81,17 @@ function About() {
             the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s.{" "}
           </Text>
-          <OutlineButton
-            borderColor="border-secondary"
-            hoverBorderColor="hover:border-secondary"
-            textColor="text-white"
-            hoverTextColor="hover:text-secondary"
-            buttonText="Contact"
-            hoverBackgroundColor="hover:bg-transparent"
-            backgroundColor="bg-secondary"
-          />
+          <NavLink to="/contact">
+            <OutlineButton
+              borderColor="border-secondary"
+              hoverBorderColor="hover:border-secondary"
+              textColor="text-white"
+              hoverTextColor="hover:text-secondary"
+              buttonText="Contact"
+              hoverBackgroundColor="hover:bg-transparent"
+              backgroundColor="bg-secondary"
+            />
+          </NavLink>
         </div>
         <div className=" order-first xl:order-last">
           <img
@@ -122,15 +125,17 @@ function About() {
             the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s.{" "}
           </Text>
-          <OutlineButton
-            borderColor="border-secondary"
-            hoverBorderColor="hover:border-secondary"
-            textColor="text-white"
-            hoverTextColor="hover:text-secondary"
-            buttonText="Contact"
-            hoverBackgroundColor="hover:bg-transparent"
-            backgroundColor="bg-secondary"
-          />
+          <NavLink to="/contact">
+            <OutlineButton
+              borderColor="border-secondary"
+              hoverBorderColor="hover:border-secondary"
+              textColor="text-white"
+              hoverTextColor="hover:text-secondary"
+              buttonText="Contact"
+              hoverBackgroundColor="hover:bg-transparent"
+              backgroundColor="bg-secondary"
+            />
+          </NavLink>
         </div>
         <div className=" order-first mt-10 xl:mt-0">
           <img
