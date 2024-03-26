@@ -9,8 +9,20 @@ import {
 import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
+import { useForm } from "react-hook-form";
 
 function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
     <div className="font-[sans-serif] text-[#333]">
       <div className="min-h-screen flex flex-col items-center justify-center">
@@ -20,7 +32,7 @@ function Login() {
               Welcome Back
             </Text>
 
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-12">
                 <Text className="text-md text-gray-500 mt-2">
                   Don't have an account?{" "}
@@ -30,27 +42,45 @@ function Login() {
                 </Text>
               </div>
               <div>
+                {errors.email && (
+                  <span className="text-xs text-red-600">
+                    {errors.email.message}
+                  </span>
+                )}
                 <label className="text-xs block mb-2">Email</label>
                 <div className="relative flex items-center">
                   <input
                     name="email"
                     type="text"
-                    required
                     className="w-full text-sm border-b border-gray-300 focus:border-secondary px-2 py-3 outline-none"
                     placeholder="Enter email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                        message: "Invalid email format",
+                      },
+                    })}
                   />
                   <FaEnvelope className="text-[#bbb] absolute right-2" />
                 </div>
               </div>
               <div className="mt-8">
+                {errors.password && (
+                  <span className="text-xs text-red-600">
+                    {errors.password.message}
+                  </span>
+                )}
                 <label className="text-xs block mb-2">Password</label>
                 <div className="relative flex items-center">
                   <input
                     name="password"
                     type="password"
-                    required
                     className="w-full text-sm border-b border-gray-300 focus:border-secondary px-2 py-3 outline-none"
                     placeholder="Enter password"
+                    {...register("password", {
+                      required: "Password is required",
+                    })}
                   />
                   <FaLock className="text-[#bbb] absolute right-2 cursor-pointer" />
                 </div>
