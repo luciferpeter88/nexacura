@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileDashNav from "../../Components/ProfileDashNav/ProfileDashNav";
+import ProfileDashNav from "../ProfileDashNav/ProfileDashNav";
 
 function Layout({ children }) {
   return (

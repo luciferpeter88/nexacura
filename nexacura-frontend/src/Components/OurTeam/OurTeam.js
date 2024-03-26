@@ -11,9 +11,9 @@ function TeamMember({ name, position, imageSrc, socialLinks }) {
       ></div>
       <div className=" bg-white  p-4 my-auto shadow-2xl  xl:border-none border-none">
         <div>
-          <a className="text-primary font-bold text-xl mb-2  transition duration-500 ease-in-out">
+          <p className="text-primary font-bold text-xl mb-2  transition duration-500 ease-in-out">
             {name}
-          </a>
+          </p>
           <Text className="text-sm text-gray-600">{position}</Text>
           <Text className="text-gray-500 text-base mt-4">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.

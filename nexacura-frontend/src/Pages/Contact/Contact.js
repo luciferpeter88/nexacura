@@ -83,27 +83,27 @@ function Contact() {
             </div>
             <div className="">
               <ul className="flex mt-3 space-x-4">
-                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <div>
-                    <a href="https://www.facebook.com">
+                <a href="https://www.facebook.com">
+                  <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                    <div>
                       <FaFacebook />
-                    </a>
-                  </div>
-                </li>
-                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <div>
-                    <a href="https://www.linkedin.com">
+                    </div>
+                  </li>
+                </a>
+                <a href="https://www.linkedin.com">
+                  <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                    <div>
                       <FaLinkedin />
-                    </a>
-                  </div>
-                </li>
-                <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <div>
-                    <a href="https://www.instagram.com">
+                    </div>
+                  </li>
+                </a>
+                <a href="https://www.instagram.com">
+                  <li className="bg-white text-secondary h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                    <div>
                       <FaInstagram />
-                    </a>
-                  </div>
-                </li>
+                    </div>
+                  </li>
+                </a>
               </ul>
             </div>
           </div>
