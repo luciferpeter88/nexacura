@@ -2,6 +2,7 @@ import React from "react";
 import { FaCheck } from "react-icons/fa";
 import OutlineButton from "../Button/OutlineButton";
 import Text from "../Text/Text";
+import { NavLink } from "react-router-dom";
 
 function SubscriptionCard({ name, price, duration, benefits, popular }) {
   return (
@@ -27,16 +28,18 @@ function SubscriptionCard({ name, price, duration, benefits, popular }) {
             </li>
           ))}
         </ul>
-        <OutlineButton
-          borderColor="border-primary"
-          hoverBorderColor="hover:border-secondary"
-          textColor="text-white"
-          hoverTextColor="hover:text-secondary"
-          buttonText="Send Message"
-          hoverBackgroundColor="hover:bg-transparent"
-          backgroundColor="bg-primary"
-          width="w-full mt-4"
-        />
+        <NavLink to="/register">
+          <OutlineButton
+            borderColor="border-primary"
+            hoverBorderColor="hover:border-secondary"
+            textColor="text-white"
+            hoverTextColor="hover:text-secondary"
+            buttonText="Select Plan"
+            hoverBackgroundColor="hover:bg-transparent"
+            backgroundColor="bg-primary"
+            width="w-full mt-4"
+          />
+        </NavLink>
       </div>
     </div>
   );
