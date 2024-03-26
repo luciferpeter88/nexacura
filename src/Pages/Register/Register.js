@@ -10,6 +10,7 @@ import {
 import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
+import { useForm } from "react-hook-form";
 
 // Import necessary icons
 
@@ -26,17 +27,18 @@ const iconSelector = (name) => {
       return null; // Default case if no match
   }
 };
-const FormInput = ({ label, name, type, placeholder }) => {
+const FormInput = ({ label, name, type, placeholder, register, errors }) => {
   return (
     <div>
+      {errors && <span className="text-xs text-red-600">{errors.message}</span>}
       <label className="text-xs block mb-2">{label}</label>
       <div className="relative flex items-center">
         <input
           name={name}
           type={type}
-          required
           className="w-full text-sm border-b border-gray-300 focus:border-secondary px-2 py-3 outline-none"
           placeholder={placeholder}
+          {...register}
         />
         {iconSelector(name)}
       </div>
@@ -45,6 +47,18 @@ const FormInput = ({ label, name, type, placeholder }) => {
 };
 
 function Register() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    watch,
+  } = useForm();
+  const password = watch("password", "");
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   return (
     <div className="font-[sans-serif] text-[#333]">
       <div className="min-h-screen flex flex-col items-center justify-center">
@@ -54,19 +68,35 @@ function Register() {
               Welcome
             </Text>
 
-            <form className="mt-5">
+            <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col gap-y-5">
                 <FormInput
                   label="Full Name"
                   name="fullName"
                   type="text"
                   placeholder="Enter full name"
+                  register={register("name", {
+                    required: "Name is required",
+                    minLength: {
+                      value: 3,
+                      message: "Name should be at least 3 characters",
+                    },
+                  })}
+                  errors={errors.name}
                 />
                 <FormInput
                   label="Email"
                   name="email"
                   type="text"
                   placeholder="Enter email"
+                  register={register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                      message: "Invalid email format",
+                    },
+                  })}
+                  errors={errors.email}
                 />
 
                 <FormInput
@@ -74,12 +104,25 @@ function Register() {
                   name="password"
                   type="password"
                   placeholder="Enter password"
+                  register={register("password", {
+                    required: "You must specify a password",
+                    minLength: {
+                      value: 8,
+                      message: "Password must have at least 8 characters",
+                    },
+                  })}
+                  errors={errors.password}
                 />
                 <FormInput
                   label="Confirm Password"
                   name="confirmPassword"
                   type="password"
                   placeholder="Confirm password"
+                  register={register("confirmPassword", {
+                    validate: (value) =>
+                      value === password || "The passwords do not match",
+                  })}
+                  errors={errors.confirmPassword}
                 />
               </div>
               <div className="flex items-center justify-between gap-2 mt-5">
