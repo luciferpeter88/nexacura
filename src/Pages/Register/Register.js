@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FaEnvelope,
-  FaLock,
-  FaGoogle,
-  FaFacebookF,
-  FaTwitter,
-  FaUser,
-} from "react-icons/fa";
+import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
@@ -154,18 +147,6 @@ function Register() {
                   Terms & Conditions
                 </NavLink>
               </Text>
-
-              <div className="space-x-8 flex justify-center text-secondary">
-                <button type="button" className="border-none outline-none">
-                  <FaGoogle className="inline text-2xl" />
-                </button>
-                <button type="button" className="border-none outline-none">
-                  <FaFacebookF className="inline text-2xl" />
-                </button>
-                <button type="button" className="border-none outline-none">
-                  <FaTwitter className="inline text-2xl" />
-                </button>
-              </div>
             </form>
           </div>
         </div>
