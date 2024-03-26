@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <Layout>
       <div className="flex mt-3 h-full">
-        <TreatmentList />
+        {/* <TreatmentList /> */}
         <AvatarMain />
       </div>
     </Layout>

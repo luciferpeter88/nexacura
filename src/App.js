@@ -3,7 +3,7 @@ import DefaultRoutes from "./Components/Routes/DefaultRoutes";
 import DashboardRoutes from "./Components/Routes/DashboardRoutes";
 
 function App() {
-  const loggedIn = false;
+  const loggedIn = true;
 
   return (
     <React.Fragment>

@@ -3,7 +3,7 @@ import DefaultNav from "./DefaultNav";
 import DashboardNav from "./DashboardNav";
 
 function Nav() {
-  const loggedIn = false;
+  const loggedIn = true;
   return (
     <React.Fragment>
       {loggedIn ? <DashboardNav /> : <DefaultNav />}
