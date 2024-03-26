@@ -32,11 +32,18 @@ function Contact() {
     formState: { errors },
     reset,
   } = useForm();
-
+  const [data, setData] = React.useState("");
   const onSubmit = (data) => {
-    console.log(data);
+    setData(data.name);
     reset();
   };
+  // settimeout function to remove the message after 5 seconds
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      setData("");
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [data]);
   return (
     <div>
       <Text
@@ -99,6 +106,11 @@ function Contact() {
             className="space-y-4 p-10 lg:col-span-7"
             onSubmit={handleSubmit(onSubmit)}
           >
+            {data && (
+              <Text className="text-green-500 text-lg">
+                Thank you for your message
+              </Text>
+            )}
             <Input
               label="Name"
               type="text"
