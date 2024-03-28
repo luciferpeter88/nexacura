@@ -1,7 +1,7 @@
 import React from "react";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import Text from "../../Components/Text/Text";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -21,11 +21,23 @@ const iconSelector = (name) => {
       return null; // Default case if no match
   }
 };
-const FormInput = ({ label, name, type, placeholder, register, errors }) => {
+const FormInput = ({
+  label,
+  name,
+  type,
+  placeholder,
+  register,
+  errors,
+  isEmailRegistered,
+}) => {
   return (
     <div>
       {errors && <span className="text-xs text-red-600">{errors.message}</span>}
-      <label className="text-xs block mb-2">{label}</label>
+      <label className="text-xs block mb-2">
+        {label === "Email" && isEmailRegistered
+          ? "Email already exists"
+          : label}
+      </label>
       <div className="relative flex items-center">
         <input
           name={name}
@@ -41,6 +53,8 @@ const FormInput = ({ label, name, type, placeholder, register, errors }) => {
 };
 
 function Register() {
+  const [isEmailRegistered, setIsEmailRegistered] = React.useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -56,7 +70,13 @@ function Register() {
         data
       );
       console.log("Response:", response.data);
-      reset();
+      const { isRegistered, isEmailRegistered } = response.data;
+      setIsEmailRegistered(isEmailRegistered);
+      if (isRegistered) {
+        // Redirect to login page
+        navigate("/login");
+        reset();
+      }
     } catch (error) {
       console.log("Error:", error);
     }
@@ -66,6 +86,7 @@ function Register() {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="items-center gap-4 px-10 lg:px-0 lg:max-w-3xl w-full  shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
           <div className=" w-full lg:px-6 py-4">
+            {}
             <Text className="text-3xl font-extrabold text-primary">
               Welcome
             </Text>
@@ -99,6 +120,7 @@ function Register() {
                     },
                   })}
                   errors={errors.email}
+                  isEmailRegistered={isEmailRegistered}
                 />
 
                 <FormInput
