@@ -7,6 +7,7 @@ require("dotenv").config();
 // Import the database connection
 // require("./config/database");
 // Import the routes
+const registration = require("./routes/Registration");
 // const registration = require("./controllers/routes/Users/register");
 // const login = require("./controllers/routes/Users/login");
 // const profile = require("./controllers/routes/Users/profile");
@@ -20,7 +21,7 @@ new GlobalMiddlewares(express);
 // express.use("/login", login.getRouter());
 
 // // create a route for the registration page
-// express.use("/registration", registration.getRouter());
+express.use("/registration", new registration().router);
 // express.use("/profile", profile.getRouter());
 // express.use("/admin", admin.getRouter());
 // express.use("/events", event.getRouter());

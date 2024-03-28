@@ -4,6 +4,7 @@ import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 // Import necessary icons
 
@@ -49,8 +50,19 @@ function Register() {
   } = useForm();
   const password = watch("password", "");
   const onSubmit = (data) => {
-    console.log(data);
-    reset();
+    axios
+      .post("http://localhost:4000/registration", data)
+      .then((response) => {
+        // This will log the response data from the server
+        console.log("Response:", response.data);
+
+        // Assuming you have a reset function to clear the form or do other actions after submission
+        reset();
+      })
+      .catch((error) => {
+        // This will log any error during the request
+        console.log("Error:", error);
+      });
   };
   return (
     <div className="font-[sans-serif] text-[#333]">
