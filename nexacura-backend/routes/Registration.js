@@ -1,26 +1,22 @@
 const BaseRoute = require("../routes/Baseroute");
-// const NewUser = require("../../classes/users/newUser/newUser");
-// create a class for the user registration and extend the base route class to inherit the router
+const PasswordHash = require("../utilities/PasswordHashing");
+const User = require("../models/User");
+
 class UserRegistration extends BaseRoute {
   constructor() {
     super();
-    // initialize the routes immediately the class is instantiated
     this.initializeRoutes();
   }
-  // create a method to initialize the routes
+
   initializeRoutes() {
-    // access the getRouter method from the baseRoute class and crinvoke teeate a post route
     this.router.post("/", async (request, response) => {
       try {
-        // destructure the request body
-        const data = request.body;
-        console.log(data);
-        // create a new user
-        // await new NewUser(fName, lName, email, password).createUser();
-        // send a response to the client
+        const { name, email, password } = request.body;
+        const hashedPassword = await new PasswordHash(password).hashPassword();
+        console.log(name, email, hashedPassword);
+        await new User({ name, email, password: hashedPassword }).save();
         response.status(201).json({
-          message: data,
-          status: "Fuck yeah!",
+          isRegistered: true,
         });
       } catch (error) {
         console.log(error);
@@ -28,5 +24,5 @@ class UserRegistration extends BaseRoute {
     });
   }
 }
-// export the user registration class and instantiate it immediately
+
 module.exports = UserRegistration;

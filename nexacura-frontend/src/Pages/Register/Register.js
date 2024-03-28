@@ -49,20 +49,17 @@ function Register() {
     watch,
   } = useForm();
   const password = watch("password", "");
-  const onSubmit = (data) => {
-    axios
-      .post("http://localhost:4000/registration", data)
-      .then((response) => {
-        // This will log the response data from the server
-        console.log("Response:", response.data);
-
-        // Assuming you have a reset function to clear the form or do other actions after submission
-        reset();
-      })
-      .catch((error) => {
-        // This will log any error during the request
-        console.log("Error:", error);
-      });
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/registration",
+        data
+      );
+      console.log("Response:", response.data);
+      reset();
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
   return (
     <div className="font-[sans-serif] text-[#333]">
