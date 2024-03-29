@@ -18,7 +18,14 @@ class UserRegistration extends BaseRoute {
           const hashedPassword = await new PasswordHash(
             password
           ).hashPassword();
-          await new User({ name, email, password: hashedPassword }).save();
+          await new User({
+            name,
+            email,
+            password: hashedPassword,
+            bio: "",
+            image: "",
+            profession: "",
+          }).save();
           response.status(201).json({
             isRegistered: true,
           });
