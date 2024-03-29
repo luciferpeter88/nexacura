@@ -35,7 +35,7 @@ const InputField = ({
 };
 
 function MyAccount() {
-  const { initial } = React.useContext(authenticationContext);
+  const { initial, dispatch } = React.useContext(authenticationContext);
   const isAuthenticated = initial.isAuthenticated;
   const [user, setUser] = React.useState({
     name: initial.user.name,
@@ -56,6 +56,13 @@ function MyAccount() {
     try {
       const response = await axios.post("http://localhost:4000/user", user);
       console.log(response.data);
+      dispatch({
+        type: "PROFILE_UPDATE",
+        payload: {
+          isAuthenticated: true,
+          user: response.data.user,
+        },
+      });
     } catch (error) {
       console.log(error);
     }
@@ -114,6 +121,7 @@ function MyAccount() {
                   type="text"
                   placeholder="your profession"
                   name="profession"
+                  value={user.isAuthenticated ? user.profession : ""}
                   handlechange={handlechange}
                   required
                 />
@@ -130,7 +138,7 @@ function MyAccount() {
                     rows="4"
                     className={`px-4 py-3.5 bg-gray-100 text-[#333] w-full text-sm border rounded-md focus:border-primary outline-none $`}
                     placeholder="Write your bio here..."
-                    value={user.bio}
+                    value={user.isAuthenticated ? user.bio : ""}
                     name="bio"
                     onChange={handlechange}
                   ></textarea>
