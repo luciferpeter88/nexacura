@@ -27,7 +27,7 @@ const InputField = ({
         value={value}
         name={name}
         onChange={handlechange}
-        // required={required}
+        readOnly={type === "email" ? true : false}
       />
     </div>
   );
@@ -39,17 +39,22 @@ function MyAccount() {
   const [user, setUser] = React.useState({
     name: initial.user.name,
     email: initial.user.email,
-    profession: "",
-    bio: "",
+    image: initial.user.image,
+    profession: initial.user.profession,
+    bio: initial.user.bio,
     isAuthenticated: isAuthenticated,
   });
 
   function handlechange(e) {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
-  React.useEffect(() => {
+  React.useEffect(() => {}, [user]);
+
+  function onSubmit(e) {
     console.log(user);
-  }, [user]);
+    e.preventDefault();
+  }
+
   return (
     <Layout>
       <div className="flex w-full flex-col gap-3 bg-white px-3 text-[#161931] md:flex-row">
@@ -59,7 +64,7 @@ function MyAccount() {
               Public Profile
             </Text>
 
-            <div className="mx-auto mt-5 grid max-w-2xl">
+            <form className="mx-auto mt-5 grid max-w-2xl" onSubmit={onSubmit}>
               <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                 <img
                   className="h-40 w-40 rounded-full object-cover p-1"
@@ -133,7 +138,7 @@ function MyAccount() {
                   />
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </main>
       </div>
