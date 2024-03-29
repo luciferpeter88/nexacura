@@ -3,6 +3,7 @@ import Layout from "../../Components/Dashboard/Layout";
 import Text from "../../Components/Text/Text";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import authenticationContext from "../../context/authenticationContext";
+import axios from "axios";
 
 const InputField = ({
   id,
@@ -50,9 +51,14 @@ function MyAccount() {
   }
   React.useEffect(() => {}, [user]);
 
-  function onSubmit(e) {
-    console.log(user);
+  async function onSubmit(e) {
     e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:4000/user", user);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -68,7 +74,11 @@ function MyAccount() {
               <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                 <img
                   className="h-40 w-40 rounded-full object-cover p-1"
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  src={
+                    user.isAuthenticated && user.image
+                      ? user.image
+                      : "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  }
                   alt="Bordered avatar"
                 />
               </div>

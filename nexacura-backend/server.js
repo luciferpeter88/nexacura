@@ -9,6 +9,7 @@ const DatabaseConnection = require("./db/DatabaseConnection");
 // Import the routes
 const registration = require("./routes/Registration");
 const login = require("./routes/Login");
+const User = require("./routes/User");
 
 // instantiate the global middlewares
 new GlobalMiddlewares(express);
@@ -17,6 +18,7 @@ new DatabaseConnection();
 // // create a route for the registration page
 express.use("/registration", new registration().router);
 express.use("/login", new login().router);
+express.use("/user", new User().router);
 
 // create a route for the home page
 express.get("/", (req, res) => {
