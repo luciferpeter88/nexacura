@@ -1,12 +1,15 @@
 import React from "react";
 import DefaultNav from "./DefaultNav";
 import DashboardNav from "./DashboardNav";
+import authenticationContext from "../../context/authenticationContext";
 
 function Nav() {
-  const loggedIn = false;
+  const {
+    initial: { isAuthenticated },
+  } = React.useContext(authenticationContext);
   return (
     <React.Fragment>
-      {loggedIn ? <DashboardNav /> : <DefaultNav />}
+      {isAuthenticated ? <DashboardNav /> : <DefaultNav />}
     </React.Fragment>
   );
 }

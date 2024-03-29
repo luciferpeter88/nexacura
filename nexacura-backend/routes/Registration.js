@@ -13,8 +13,8 @@ class UserRegistration extends BaseRoute {
     this.router.post("/", async (request, response) => {
       try {
         const { name, email, password } = request.body;
-        const hasEmailDb = await new EmailChecker().checkEmail(email);
-        if (hasEmailDb === false) {
+        const doesEmailExistInDb = await new EmailChecker().checkEmail(email);
+        if (doesEmailExistInDb === false) {
           const hashedPassword = await new PasswordHash(
             password
           ).hashPassword();

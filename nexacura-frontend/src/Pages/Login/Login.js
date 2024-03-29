@@ -10,17 +10,38 @@ import Text from "../../Components/Text/Text";
 import { NavLink } from "react-router-dom";
 import OutlineButton from "../../Components/Button/OutlineButton";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import authenticationContext from "../../context/authenticationContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const { dispatch } = React.useContext(authenticationContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("http://localhost:4000/login", data);
+      console.log("Response:", response.data);
+      if (response.data.isAuthenticated) {
+        // Redirect to dashboard
+        navigate("/");
+        reset();
+      }
+      dispatch({
+        type: "LOGIN",
+        payload: {
+          isAuthenticated: response.data.isAuthenticated,
+          user: response.data.message,
+        },
+      });
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   return (

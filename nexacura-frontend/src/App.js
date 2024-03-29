@@ -1,13 +1,16 @@
 import React from "react";
 import DefaultRoutes from "./Components/Routes/DefaultRoutes";
 import DashboardRoutes from "./Components/Routes/DashboardRoutes";
+import authenticationContext from "./context/authenticationContext";
 
 function App() {
-  const loggedIn = false;
+  const {
+    initial: { isAuthenticated },
+  } = React.useContext(authenticationContext);
 
   return (
     <React.Fragment>
-      {loggedIn ? <DashboardRoutes /> : <DefaultRoutes />}
+      {isAuthenticated ? <DashboardRoutes /> : <DefaultRoutes />}
     </React.Fragment>
   );
 }
