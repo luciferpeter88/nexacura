@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { dispatch } = React.useContext(authenticationContext);
+  const [isAuthenticated, setIsAuthenticated] = React.useState("");
   const navigate = useNavigate();
   const {
     register,
@@ -39,6 +40,7 @@ function Login() {
           user: response.data.message,
         },
       });
+      setIsAuthenticated(response.data.message);
     } catch (error) {
       console.log("Error:", error);
     }
@@ -67,6 +69,9 @@ function Login() {
                   <span className="text-xs text-red-600">
                     {errors.email.message}
                   </span>
+                )}
+                {isAuthenticated && (
+                  <Text className="text-red-500 mb-5">{isAuthenticated}</Text>
                 )}
                 <label className="text-xs block mb-2">Email</label>
                 <div className="relative flex items-center">

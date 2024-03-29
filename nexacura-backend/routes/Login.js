@@ -22,7 +22,7 @@ class Login extends BaseRoute {
           if (!getUserData) {
             response.json({
               isAuthenticated: false,
-              message: "Invalid credentials",
+              message: "Invalid credentials!",
             });
           } else {
             response.json({
@@ -33,7 +33,7 @@ class Login extends BaseRoute {
         } else {
           response.json({
             isAuthenticated: false,
-            message: "Invalid credentials",
+            message: "Invalid credentials!",
           });
         }
       } catch (error) {

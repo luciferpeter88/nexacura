@@ -2,37 +2,54 @@ import React from "react";
 import Layout from "../../Components/Dashboard/Layout";
 import Text from "../../Components/Text/Text";
 import OutlineButton from "../../Components/Button/OutlineButton";
+import authenticationContext from "../../context/authenticationContext";
+
+const InputField = ({
+  id,
+  label,
+  type,
+  placeholder,
+  value,
+  handlechange,
+  name,
+  required,
+}) => {
+  return (
+    <div className="w-full">
+      <label htmlFor={id} className=" block text-sm font-medium text-gray-500">
+        {label}
+      </label>
+      <input
+        type={type}
+        id={id}
+        className={`px-4 py-3.5 bg-gray-100 text-[#333] w-full text-sm border rounded-md focus:border-primary outline-none mt-2 mb-4`}
+        placeholder={placeholder}
+        value={value}
+        name={name}
+        onChange={handlechange}
+        // required={required}
+      />
+    </div>
+  );
+};
 
 function MyAccount() {
-  const InputField = ({
-    id,
-    label,
-    type,
-    placeholder,
-    value,
-    onChange,
-    required,
-  }) => {
-    return (
-      <div className="w-full">
-        <label
-          htmlFor={id}
-          className=" block text-sm font-medium text-gray-500"
-        >
-          {label}
-        </label>
-        <input
-          type={type}
-          id={id}
-          className={`px-4 py-3.5 bg-gray-100 text-[#333] w-full text-sm border rounded-md focus:border-primary outline-none mt-2 mb-4`}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          required={required}
-        />
-      </div>
-    );
-  };
+  const { initial } = React.useContext(authenticationContext);
+  const isAuthenticated = initial.isAuthenticated;
+  const [user, setUser] = React.useState({
+    name: initial.user.name,
+    email: initial.user.email,
+    profession: "",
+    bio: "",
+    isAuthenticated: isAuthenticated,
+  });
+
+  function handlechange(e) {
+    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+  React.useEffect(() => {
+    console.log(user);
+  }, [user]);
   return (
     <Layout>
       <div className="flex w-full flex-col gap-3 bg-white px-3 text-[#161931] md:flex-row">
@@ -54,20 +71,15 @@ function MyAccount() {
               <div className=" items-center text-[#202142] sm:mt-10">
                 <div className=" flex w-full flex-col items-center space-x-0 space-y-2  sm:flex-row sm:space-x-4 sm:space-y-0">
                   {/* Input fields using the InputField component */}
-                  <InputField
-                    id="first_name"
-                    label="Your first name"
-                    type="text"
-                    placeholder="Your first name"
-                    value="Jane"
-                    required
-                  />
+
                   <InputField
                     id="last_name"
-                    label="Your last name"
+                    label="Your full name"
                     type="text"
-                    placeholder="Your last name"
-                    value="Ferguson"
+                    placeholder="Your full name"
+                    name="name"
+                    value={user.isAuthenticated ? user.name : ""}
+                    handlechange={handlechange}
                     required
                   />
                 </div>
@@ -77,6 +89,8 @@ function MyAccount() {
                   label="Your email"
                   type="email"
                   placeholder="your.email@mail.com"
+                  name="email"
+                  value={user.isAuthenticated ? user.email : ""}
                   required
                 />
                 <InputField
@@ -84,6 +98,8 @@ function MyAccount() {
                   label="Profession"
                   type="text"
                   placeholder="your profession"
+                  name="profession"
+                  handlechange={handlechange}
                   required
                 />
 
@@ -99,6 +115,9 @@ function MyAccount() {
                     rows="4"
                     className={`px-4 py-3.5 bg-gray-100 text-[#333] w-full text-sm border rounded-md focus:border-primary outline-none $`}
                     placeholder="Write your bio here..."
+                    value={user.bio}
+                    name="bio"
+                    onChange={handlechange}
                   ></textarea>
                 </div>
 
