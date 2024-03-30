@@ -45,17 +45,48 @@ function MyAccount() {
     bio: initial.user.bio,
     isAuthenticated: isAuthenticated,
   });
+  const [file, setFile] = React.useState(null);
+  const [bulb, setBulb] = React.useState(false);
 
   function handlechange(e) {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+  function handleFileChange(e) {
+    // create a bolb url for the image
+    const url = URL.createObjectURL(e.target.files[0]);
+    setFile(url);
+    setBulb(true);
+    setUser((prev) => ({
+      ...prev,
+      image: e.target.files[0],
+    }));
+
+    //setFile(e.target.files[0]);
   }
   React.useEffect(() => {}, [user]);
 
   async function onSubmit(e) {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", user.name);
+    formData.append("email", user.email);
+    formData.append("image", user.image); // Assuming 'image' is the field name expected by your server
+    formData.append("profession", user.profession);
+    formData.append("bio", user.bio);
+
     try {
-      const response = await axios.post("http://localhost:4000/user", user);
-      console.log(response.data);
+      const response = await axios.post(
+        "http://localhost:4000/user",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true,
+        }
+      );
+      // console.log(response.data);
       dispatch({
         type: "PROFILE_UPDATE",
         payload: {
@@ -81,12 +112,13 @@ function MyAccount() {
               <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                 <img
                   className="h-40 w-40 rounded-full object-cover p-1"
-                  src={
-                    user.isAuthenticated && user.image
-                      ? user.image
-                      : "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-                  }
+                  src={user.isAuthenticated && !bulb ? user.image : file}
                   alt="Bordered avatar"
+                />
+                <input
+                  type="file"
+                  className="w-full py-2 px-4 bg-gray-100 text-[#333] text-sm border rounded-md focus:border-primary outline-none"
+                  onChange={handleFileChange}
                 />
               </div>
 

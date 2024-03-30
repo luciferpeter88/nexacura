@@ -1,5 +1,6 @@
 const UserModel = require("../models/User");
 const BaseRoute = require("../routes/Baseroute");
+const upload = require("../middlewares/multer");
 
 class User extends BaseRoute {
   constructor() {
@@ -8,12 +9,24 @@ class User extends BaseRoute {
   }
 
   initializeRoutes() {
-    this.router.post("/", async (request, response) => {
-      const { email, name, image, profession, bio } = request.body;
+    this.router.post("/", upload.single("image"), async (request, response) => {
+      const { email, name, profession, bio } = request.body;
+      let updateObj = {
+        name,
+        profession,
+        bio,
+      };
+
+      // If an image file is uploaded, add the image path to the update object
+      if (request.file) {
+        const imagePath = `http://localhost:4000/${request.file.filename}`;
+        updateObj.image = imagePath;
+      }
+
       try {
         const updatedUser = await UserModel.findOneAndUpdate(
           { email: email }, // find a document by email
-          { $set: { name, image, profession, bio } }, // fields to update
+          { $set: updateObj }, // dynamically constructed fields to update
           { new: true } // option to return the updated document
         );
 

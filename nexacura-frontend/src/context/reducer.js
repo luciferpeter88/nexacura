@@ -15,6 +15,8 @@ function reducer(state, action) {
         };
       }
     case "PROFILE_UPDATE":
+      console.log(action.payload.user, "coming from reducer");
+
       return {
         ...state,
         isAuthenticated: action.payload.isAuthenticated,
