@@ -9,7 +9,11 @@ function ProfileDashNav() {
   // console.log("Data:", initial);
   return (
     <div className="flex gap-x-3 items-center justify-end">
-      <img src={user} alt="profile" className="rounded-full h-10 w-10" />
+      <img
+        src={isAuthenticated ? initial.user.image : ""}
+        alt="profile"
+        className="rounded-full h-10 w-10"
+      />
       <Text size="lg" weight="bold" className="">
         {isAuthenticated ? initial.user.name : ""}
       </Text>
