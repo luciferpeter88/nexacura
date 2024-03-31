@@ -1,12 +1,15 @@
-// speechToText
-
 const BaseRoute = require("../routes/Baseroute");
 const upload = require("../middlewares/multerAudio");
+const fs = require("fs"); // Corrected this line
+const FormData = require("form-data");
+const axios = require("axios");
+const AudioConverter = require("../utilities/AudioConverter");
 
 class SpeechToText extends BaseRoute {
   constructor() {
     super();
     this.initializeRoutes();
+    this.api = "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";
   }
 
   initializeRoutes() {
@@ -14,32 +17,41 @@ class SpeechToText extends BaseRoute {
       try {
         if (request.file) {
           console.log(request.file);
-          response.status(200).json({ message: "File uploaded." });
-          // const audioFileBuffer = await fs.readFile(
-          //   `public/uploads/${req.file.filename}`
-          // );
-          // const formData = new FormData();
-          // formData.append("model", "whisper-1"); // Specify the whisper-1 model which you want to use
-          // formData.append("file", audioFileBuffer, {
-          //   filename: "hey.mp3",
-          //   contentType: "audio/mp3",
-          // });
-          // const response = await axios.post(
-          //   "https://api.openai.com/v1/audio/transcriptions",
-          //   formData,
-          //   {
-          //     headers: {
-          //       ...formData.getHeaders(),
-          //       Authorization: `Bearer ${process.env.OPEN_AI_API_KEY}`,
-          //     },
-          //   }
-          // );
+          const audioConverter = new AudioConverter();
+          const inputPath = `uploads/input_audio/${request.file.filename}`;
+          const outputPath = await audioConverter.convertWebMToMP3(
+            inputPath,
+            `uploads/output_audio/${request.file.filename}.mp3`
+          );
+          console.log(`Conversion successful. Output file: ${outputPath}`);
+
+          // Correctly create FormData
+          const formData = new FormData();
+          formData.append("model", "whisper-1");
+          formData.append("file", fs.createReadStream(outputPath));
+
+          // Send the FormData with axios
+          const responseData = await axios.post(
+            "https://api.openai.com/v1/audio/transcriptions",
+            formData,
+            {
+              headers: {
+                ...formData.getHeaders(),
+                Authorization: `Bearer ${this.api}`,
+              },
+            }
+          );
+          console.log(responseData.data, "responseData");
+          response.status(200).json({
+            message: "File uploaded and processed.",
+            data: responseData.data,
+          });
         } else {
-          response.status(200).json({ message: "No file uploaded." });
+          response.status(400).json({ message: "No file uploaded." });
         }
       } catch (error) {
-        console.error("Error creating translation:", error.message);
-        throw error;
+        console.error("Error processing the request:", error.message);
+        response.status(500).json({ error: error.message });
       }
     });
   }
