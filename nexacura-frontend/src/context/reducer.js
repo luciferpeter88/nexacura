@@ -22,6 +22,14 @@ function reducer(state, action) {
         isAuthenticated: action.payload.isAuthenticated,
         user: action.payload.user,
       };
+    case "DASHBOARD_LOGOUT":
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: {
+          ...state.user,
+        },
+      };
     default:
       return state;
   }

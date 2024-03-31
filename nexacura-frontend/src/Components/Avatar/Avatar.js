@@ -1,14 +1,21 @@
 // import "./Avatar.css";
+import React from "react";
 import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
 import { createAvatarSynthesizer, createWebRTCConnection } from "./Utility";
 import { avatarAppConfig } from "./config";
 import { useState } from "react";
 import { useRef } from "react";
+import authenticationContext from "../../context/authenticationContext";
+import Whisper from "../Whisper/Whisper";
 
 export const Avatar = () => {
+  const { initial } = React.useContext(authenticationContext);
   const [avatarSynthesizer, setAvatarSynthesizer] = useState(null);
   const myAvatarVideoEleRef = useRef();
   const myAvatarAudioEleRef = useRef();
+  const buttonRef = useRef(null);
+  const logoutButtonRef = useRef(null);
+
   const [mySpeechText, setMySpeechText] = useState("");
 
   var iceUrl = avatarAppConfig.iceUrl;
@@ -147,8 +154,21 @@ export const Avatar = () => {
       });
   };
 
+  React.useEffect(() => {
+    if (initial.isAuthenticated) {
+      if (buttonRef.current) {
+        buttonRef.current.click();
+      }
+    } else {
+      if (logoutButtonRef.current) {
+        logoutButtonRef.current.click();
+      }
+    }
+  }, [initial.isAuthenticated]);
+
   return (
     <div className="h-full  w-full  flex flex-col items-center">
+      <Whisper />
       <div id="myAvatarVideo" className="myVideoDiv">
         <video
           className="myAvatarVideoElement"
@@ -159,12 +179,17 @@ export const Avatar = () => {
       </div>
       <div className="myButtonGroup d-flex justify-content-around bg-red-500 z-[1500] absolute top-0 left-0">
         <button
-          className="btn btn-success cursor-pointer"
+          className="btn btn-success cursor-pointer hidden"
+          ref={buttonRef}
           onClick={startSession}
         >
           Connect
         </button>
-        <button className="btn btn-danger" onClick={stopSession}>
+        <button
+          className="btn btn-danger hidden"
+          onClick={stopSession}
+          ref={logoutButtonRef}
+        >
           Disconnect
         </button>
       </div>

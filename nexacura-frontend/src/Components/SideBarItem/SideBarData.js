@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import authenticationContext from "../../context/authenticationContext";
 
 function SideBarData({ icon: Icon, label, colour }) {
+  const { dispatch } = React.useContext(authenticationContext);
+
   const navigate = useNavigate();
   let navigatTo = "/";
 
@@ -19,17 +22,25 @@ function SideBarData({ icon: Icon, label, colour }) {
       navigatTo = "/my-account";
       break;
     case "Logout":
-      navigatTo = "/logout";
+      navigatTo = "/";
       break;
     default:
       navigatTo = "/";
       break;
   }
+  function handleClick() {
+    if (label === "Logout") {
+      dispatch({
+        type: "DASHBOARD_LOGOUT",
+      });
+    }
+    navigate(navigatTo);
+  }
 
   return (
     <div
       className={`p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer ${colour} hover:text-white text-black font-semibold`}
-      onClick={() => navigate(navigatTo)}
+      onClick={handleClick}
       key={label}
     >
       <Icon />

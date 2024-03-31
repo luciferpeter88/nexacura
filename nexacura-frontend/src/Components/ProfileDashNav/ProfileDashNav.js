@@ -1,6 +1,5 @@
 import React from "react";
 import Text from "../Text/Text";
-import user from "../../assets/users/49.jpg";
 import authenticationContext from "../../context/authenticationContext";
 
 function ProfileDashNav() {
