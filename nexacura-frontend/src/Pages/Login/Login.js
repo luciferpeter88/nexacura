@@ -26,7 +26,9 @@ function Login() {
   } = useForm();
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:4000/login", data);
+      const response = await axios.post("http://localhost:4000/login", data, {
+        withCredentials: true,
+      });
       console.log("Response:", response.data);
       if (response.data.isAuthenticated) {
         // Redirect to dashboard

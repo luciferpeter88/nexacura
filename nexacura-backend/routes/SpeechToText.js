@@ -14,9 +14,11 @@ class SpeechToText extends BaseRoute {
 
   initializeRoutes() {
     this.router.post("/", upload.single("audio"), async (request, response) => {
+      if (request.session.email) {
+        console.log(request.session.email, "SpeechToText");
+      }
       try {
         if (request.file) {
-          console.log(request.file);
           const audioConverter = new AudioConverter();
           const inputPath = `uploads/input_audio/${request.file.filename}`;
           const outputPath = await audioConverter.convertWebMToMP3(

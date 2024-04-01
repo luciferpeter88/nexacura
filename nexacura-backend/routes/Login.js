@@ -12,6 +12,8 @@ class Login extends BaseRoute {
     this.router.post("/", async (request, response) => {
       try {
         const { email, password } = request.body;
+        request.session.email = email;
+        console.log(request.session.email, "Login");
         const doesEmailExistInDb = await new EmailChecker().checkEmail(email);
         if (doesEmailExistInDb) {
           // false if the password is incorrect, otherwise it returns the user data
