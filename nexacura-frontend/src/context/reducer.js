@@ -30,6 +30,11 @@ function reducer(state, action) {
           ...state.user,
         },
       };
+    case "AVATAR_ANSWER":
+      return {
+        ...state,
+        avatarAnswer: action.payload,
+      };
     default:
       return state;
   }

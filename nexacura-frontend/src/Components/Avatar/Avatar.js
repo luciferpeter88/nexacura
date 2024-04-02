@@ -10,21 +10,24 @@ import Whisper from "../Whisper/Whisper";
 
 export const Avatar = () => {
   const { initial } = React.useContext(authenticationContext);
+  console.log(initial);
   const [avatarSynthesizer, setAvatarSynthesizer] = useState(null);
   const myAvatarVideoEleRef = useRef();
   const myAvatarAudioEleRef = useRef();
   const buttonRef = useRef(null);
   const logoutButtonRef = useRef(null);
+  const speakRef = useRef(null);
 
-  const [mySpeechText, setMySpeechText] = useState("");
+  const [mySpeechText, setMySpeechText] = useState("Hello, I am your Avatar.");
 
   var iceUrl = avatarAppConfig.iceUrl;
   var iceUsername = avatarAppConfig.iceUsername;
   var iceCredential = avatarAppConfig.iceCredential;
 
-  const handleSpeechText = (event) => {
-    setMySpeechText(event.target.value);
-  };
+  React.useEffect(() => {
+    setMySpeechText(initial.avatarAnswer);
+  }, [initial.avatarAnswer]);
+  console.log("Printing mySpeechText ", mySpeechText);
 
   const handleOnTrack = (event) => {
     console.log("#### Printing handle onTrack ", event);
@@ -41,9 +44,6 @@ export const Avatar = () => {
         window.requestAnimationFrame(() => {});
       });
     } else {
-      // Mute the audio player to make sure it can auto play, will unmute it when speaking
-      // Refer to https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide
-      //const mediaPlayer = myAvatarVideoEleRef.current;
       const audioPlayer = myAvatarAudioEleRef.current;
       audioPlayer.srcObject = event.streams[0];
       audioPlayer.autoplay = true;
@@ -74,6 +74,7 @@ export const Avatar = () => {
           );
           // Close the synthesizer
           avatarSynthesizer.close();
+          console.log("[" + new Date().toISOString() + "] Avatar closed.");
         })
         .catch();
     } catch (e) {}
@@ -154,18 +155,6 @@ export const Avatar = () => {
       });
   };
 
-  React.useEffect(() => {
-    if (initial.isAuthenticated) {
-      if (buttonRef.current) {
-        buttonRef.current.click();
-      }
-    } else {
-      if (logoutButtonRef.current) {
-        logoutButtonRef.current.click();
-      }
-    }
-  }, [initial.isAuthenticated]);
-
   return (
     <div className="h-full  w-full  flex flex-col items-center">
       <Whisper />
@@ -179,14 +168,14 @@ export const Avatar = () => {
       </div>
       <div className="myButtonGroup d-flex justify-content-around bg-red-500 z-[1500] absolute top-0 left-0">
         <button
-          className="btn btn-success cursor-pointer hidden"
+          className="btn btn-success cursor-pointer "
           ref={buttonRef}
           onClick={startSession}
         >
           Connect
         </button>
         <button
-          className="btn btn-danger hidden"
+          className="btn btn-danger "
           onClick={stopSession}
           ref={logoutButtonRef}
         >
@@ -195,9 +184,13 @@ export const Avatar = () => {
       </div>
 
       <div className="myTextArea">
-        <textarea className="myTextArea" onChange={handleSpeechText}></textarea>
-        <div className="myButtonGroup d-flex justify-content-around">
-          <button className="btn btn-success" onClick={speakSelectedText}>
+        {/* <textarea className="myTextArea" onChange={handleSpeechText}></textarea> */}
+        <div className="myButtonGroup d-flex justify-content-around absolute top-0 right-1">
+          <button
+            className="btn btn-success"
+            ref={speakRef}
+            onClick={speakSelectedText}
+          >
             Speak
           </button>
           <button className="btn btn-warning" onClick={stopSpeaking}>

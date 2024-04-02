@@ -52,14 +52,13 @@ class OpenAiPsychologist {
       const message = response.data.choices[0].message.content;
 
       if (email) {
-        historymanager.appendToHistory(initialPrompt);
+        // historymanager.appendToHistory(initialPrompt);
         historymanager.appendToHistory("user");
         historymanager.appendToHistory(userText);
         historymanager.appendToHistory(role);
         historymanager.appendToHistory(message);
       }
-
-      return message; // Assuming you want to return the response data
+      return message;
     } catch (error) {
       console.error("Error in answer:", error.message);
       throw error; // Rethrow or handle as needed

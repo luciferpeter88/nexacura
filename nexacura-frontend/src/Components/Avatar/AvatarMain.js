@@ -6,8 +6,8 @@ import Whisper from "../Whisper/Whisper";
 function AvatarMain() {
   return (
     <React.Fragment>
-      {/* <Avatar /> */}
-      <Whisper />
+      <Avatar />
+      {/* <Whisper /> */}
     </React.Fragment>
   );
 }

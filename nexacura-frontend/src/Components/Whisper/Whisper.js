@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import authenticationContext from "../../context/authenticationContext";
 
 function Whisper() {
+  const { dispatch } = React.useContext(authenticationContext);
+
   const [result, setResult] = useState("");
   const [recording, setRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
@@ -36,6 +39,10 @@ function Whisper() {
               });
               setResult(response.data);
               setLoading(false);
+              dispatch({
+                type: "AVATAR_ANSWER",
+                payload: response.data.message,
+              });
             } catch (error) {
               console.error(error);
             }
