@@ -12,8 +12,7 @@ class Login extends BaseRoute {
     this.router.post("/", async (request, response) => {
       try {
         const { email, password } = request.body;
-        request.session.email = email;
-        console.log(request.session.email, "Login");
+        // Check if the email exists in the database
         const doesEmailExistInDb = await new EmailChecker().checkEmail(email);
         if (doesEmailExistInDb) {
           // false if the password is incorrect, otherwise it returns the user data
@@ -27,9 +26,11 @@ class Login extends BaseRoute {
               message: "Invalid credentials!",
             });
           } else {
+            const { password, ...userData } = getUserData;
+            request.session.user = userData;
             response.json({
               isAuthenticated: true,
-              message: getUserData,
+              message: userData,
             });
           }
         } else {

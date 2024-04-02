@@ -19,7 +19,8 @@ class User extends BaseRoute {
 
       // If an image file is uploaded, add the image path to the update object
       if (request.file) {
-        const imagePath = `http://localhost:4000/${request.file.filename}`;
+        const path = request.file.path.replace("uploads/", "");
+        const imagePath = `http://localhost:4000/${path}`;
         updateObj.image = imagePath;
       }
 
