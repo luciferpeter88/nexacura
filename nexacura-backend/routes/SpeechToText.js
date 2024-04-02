@@ -36,7 +36,6 @@ class SpeechToText extends BaseRoute {
           console.log(responseData, "responseData");
           response.status(200).json({
             message: answer,
-            data: "responseData.data",
           });
         } else {
           response.status(400).json({ message: "No file uploaded." });
