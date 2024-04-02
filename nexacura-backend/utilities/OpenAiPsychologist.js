@@ -1,6 +1,7 @@
 const axios = require("axios");
 const DynamicFolderCreator = require("./DynamicFolderCreator");
 const ConversationHistoryManager = require("./ConversationHistoryManager");
+const initialPrompt = require("../prompt/initialPrompt");
 
 class OpenAiPsychologist {
   constructor(request) {
@@ -32,10 +33,10 @@ class OpenAiPsychologist {
     try {
       const response = await axios.post(
         "https://api.openai.com/v1/chat/completions",
-        payload, // Send the payload as JSON
+        payload,
         {
           headers: {
-            "Content-Type": "application/json", // Set Content-Type to application/json
+            "Content-Type": "application/json",
             Authorization: `Bearer ${this.apiKey}`,
           },
         }
@@ -43,20 +44,22 @@ class OpenAiPsychologist {
 
       console.log(txtPath, "dynamicFolder");
       console.log(response.data.choices[0].message);
+      //   console.log(initialPrompt);
 
       // Append the conversation to the history file
-      const name = this.request.session.user.name;
+      const email = this.request.session.user.email;
       const role = response.data.choices[0].message.role;
       const message = response.data.choices[0].message.content;
 
-      if (name) {
-        historymanager.appendToHistory(name);
+      if (email) {
+        historymanager.appendToHistory(initialPrompt);
+        historymanager.appendToHistory("user");
         historymanager.appendToHistory(userText);
         historymanager.appendToHistory(role);
         historymanager.appendToHistory(message);
       }
 
-      return response.data; // Assuming you want to return the response data
+      return message; // Assuming you want to return the response data
     } catch (error) {
       console.error("Error in answer:", error.message);
       throw error; // Rethrow or handle as needed

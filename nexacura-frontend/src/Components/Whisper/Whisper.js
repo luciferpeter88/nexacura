@@ -5,6 +5,7 @@ function Whisper() {
   const [result, setResult] = useState("");
   const [recording, setRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -34,6 +35,7 @@ function Whisper() {
                 withCredentials: true,
               });
               setResult(response.data);
+              setLoading(false);
             } catch (error) {
               console.error(error);
             }
@@ -48,7 +50,9 @@ function Whisper() {
         });
     }
   }, [result]);
-  console.log(result.data?.text);
+  if (!loading) {
+    console.log(result);
+  }
   const startRecording = () => {
     if (mediaRecorder && mediaRecorder.state === "inactive") {
       mediaRecorder.start();

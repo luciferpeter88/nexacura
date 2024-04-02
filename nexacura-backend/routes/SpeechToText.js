@@ -32,10 +32,10 @@ class SpeechToText extends BaseRoute {
           const transcriber = new WhisperTranscriber();
           const responseData = await transcriber.transcribeAudio(readFile);
           const openAi = new OpenAiPsychologist(request);
-          openAi.answer(responseData.text);
+          const answer = await openAi.answer(responseData.text);
           console.log(responseData, "responseData");
           response.status(200).json({
-            message: "File uploaded and processed.",
+            message: answer,
             data: "responseData.data",
           });
         } else {
