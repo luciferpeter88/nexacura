@@ -9,14 +9,21 @@ class OpenAiPsychologist {
   }
 
   async answer(userText) {
+    const txtPath = new DynamicFolderCreator(
+      this.request,
+      "output_txt"
+    ).createFolder();
+    const historymanager = new ConversationHistoryManager(
+      txtPath,
+      "conversationHistory.txt"
+    );
     // Define the payload directly as a JavaScript object
     const payload = {
       model: "gpt-4",
       messages: [
         {
           role: "system",
-          content:
-            "You are a helpful AI Psychologist who is going to provide useful conversation for people who are suffering from mental disorders.",
+          content: historymanager.readConversationHistory(),
         },
         { role: "user", content: userText },
       ],
@@ -33,23 +40,17 @@ class OpenAiPsychologist {
           },
         }
       );
-      const txtPath = new DynamicFolderCreator(
-        this.request,
-        "output_txt"
-      ).createFolder();
+
       console.log(txtPath, "dynamicFolder");
       console.log(response.data.choices[0].message);
-      const historymanager = new ConversationHistoryManager(
-        txtPath,
-        "conversationHistory.txt"
-      );
+
       // Append the conversation to the history file
-      const email = this.request.session.user.email;
+      const name = this.request.session.user.name;
       const role = response.data.choices[0].message.role;
       const message = response.data.choices[0].message.content;
 
-      if (email) {
-        historymanager.appendToHistory(email);
+      if (name) {
+        historymanager.appendToHistory(name);
         historymanager.appendToHistory(userText);
         historymanager.appendToHistory(role);
         historymanager.appendToHistory(message);
