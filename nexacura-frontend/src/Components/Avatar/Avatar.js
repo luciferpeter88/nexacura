@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import authenticationContext from "../../context/authenticationContext";
 import Whisper from "../Whisper/Whisper";
+import Text from "../Text/Text";
 
 export const Avatar = () => {
   const { initial } = React.useContext(authenticationContext);
@@ -157,7 +158,6 @@ export const Avatar = () => {
 
   return (
     <div className="h-full  w-full  flex flex-col items-center">
-      <Whisper />
       <div id="myAvatarVideo" className="myVideoDiv">
         <video
           className="myAvatarVideoElement"
@@ -166,37 +166,40 @@ export const Avatar = () => {
 
         <audio ref={myAvatarAudioEleRef}></audio>
       </div>
-      <div className="myButtonGroup d-flex justify-content-around bg-red-500 z-[1500] absolute top-0 left-0">
-        <button
-          className="btn btn-success cursor-pointer "
-          ref={buttonRef}
-          onClick={startSession}
-        >
-          Connect
-        </button>
-        <button
-          className="btn btn-danger "
-          onClick={stopSession}
-          ref={logoutButtonRef}
-        >
-          Disconnect
-        </button>
-      </div>
-
-      <div className="myTextArea">
-        {/* <textarea className="myTextArea" onChange={handleSpeechText}></textarea> */}
-        <div className="myButtonGroup d-flex justify-content-around absolute top-0 right-1">
+      <div className="myButtonGroup flex flex-col justify-center gap-y-3   z-[1500] absolute top-0 left-[20rem]">
+        <Text className=" text-center text-3xl font-bold text-primary">
+          Ava<span className="text-secondary">tar</span>
+        </Text>
+        <div className=" flex justify-between">
           <button
-            className="btn btn-success"
+            className="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            ref={buttonRef}
+            onClick={startSession}
+          >
+            Connect
+          </button>
+          <button
+            className="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            onClick={stopSession}
+            ref={logoutButtonRef}
+          >
+            Disconnect
+          </button>
+          <button
+            className="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             ref={speakRef}
             onClick={speakSelectedText}
           >
             Speak
           </button>
-          <button className="btn btn-warning" onClick={stopSpeaking}>
+          <button
+            className="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            onClick={stopSpeaking}
+          >
             Stop
           </button>
         </div>
+        <Whisper />
       </div>
     </div>
   );

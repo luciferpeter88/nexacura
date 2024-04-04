@@ -13,7 +13,7 @@ function ProfileDashNav() {
         alt="profile"
         className="rounded-full h-10 w-10"
       />
-      <Text size="lg" weight="bold" className="">
+      <Text size="lg" weight="bold" className="text-primary font-medium">
         {isAuthenticated ? initial.user.name : ""}
       </Text>
     </div>

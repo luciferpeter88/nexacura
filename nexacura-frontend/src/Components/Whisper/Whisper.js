@@ -75,13 +75,16 @@ function Whisper() {
   };
 
   return (
-    <main>
-      <div>
-        <button onClick={recording ? stopRecording : startRecording}>
-          {recording ? "Stop Recording" : "Start Recording"}
-        </button>
-      </div>
-    </main>
+    <button
+      className={`w-full ${
+        recording
+          ? "bg-red-500 hover:bg-red-500"
+          : "bg-green-500 hover:bg-green-500"
+      }   text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
+      onClick={recording ? stopRecording : startRecording}
+    >
+      {recording ? "Stop Recording" : "Start Recording"}
+    </button>
   );
 }
 
