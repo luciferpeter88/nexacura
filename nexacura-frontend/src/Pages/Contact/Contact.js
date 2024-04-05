@@ -25,6 +25,8 @@ const IconsContact = ({ title, reactIcon }) => {
   );
 };
 
+/* The `Contact` function is a React functional component that defines a form for contacting a user.
+Here's a breakdown of what the function is doing: */
 function Contact() {
   const {
     register,
@@ -38,6 +40,10 @@ function Contact() {
     reset();
   };
   // settimeout function to remove the message after 5 seconds
+
+  /* The `React.useEffect` hook in the `Contact` component is used to set up a timer that clears the
+ message stored in the `data` state variable after 3 seconds (3000 milliseconds). Here's a breakdown
+ of what it's doing: */
   React.useEffect(() => {
     const timeout = setTimeout(() => {
       setData("");

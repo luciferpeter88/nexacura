@@ -1,3 +1,13 @@
+/**
+ * The `HomePage` function in this React component renders a webpage with sections for interacting with
+ * historical figures through AI, showcasing features, FAQs, and reviews.
+ * @returns The `HomePage` component is being returned. It consists of multiple sections including:
+ * 1. First Section: A hero section with a title, description, and a button.
+ * 2. Second Section: Grid layout with multiple `Card` components.
+ * 3. Third Section: Another section similar to the first section with a different layout.
+ * 4. Fourth Section: A section with a title and description.
+ * 5.
+ */
 import React from "react";
 import Text from "../../Components/Text/Text";
 import Card from "../../Components/Card/Card";

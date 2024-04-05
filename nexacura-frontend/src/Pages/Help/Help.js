@@ -1,11 +1,24 @@
+/**
+ * The `Help` component renders a FAQ page with collapsible FAQ items using React state and components.
+ * @returns The `Help` component is being returned, which contains a layout structure for a FAQ page.
+ * Inside the `Help` component, there is a container with FAQ items displayed using the `FAQItem`
+ * component. Each `FAQItem` consists of a question and an answer, and clicking on the question toggles
+ * the visibility of the answer. The layout includes styling for the FAQ section with a title and
+ */
 import React, { useState } from "react";
 import Layout from "../../Components/Dashboard/Layout";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Text from "../../Components/Text/Text";
 
 function FAQItem({ question, answer }) {
+  /* The line `const [isOpen, setIsOpen] = useState(false);` in the `FAQItem` component is using the
+`useState` hook from React to create a state variable named `isOpen` and a function to update that
+state named `setIsOpen`. */
   const [isOpen, setIsOpen] = useState(false);
 
+  /**
+   * The function `toggleOpen` toggles the value of `isOpen` variable.
+   */
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -19,6 +32,8 @@ function FAQItem({ question, answer }) {
         >
           <span>{question}</span>
           <span className="transition group-open:rotate-180">
+            {/* The expression `{isOpen ? <FiChevronUp /> : <FiChevronDown />}` is a conditional
+           rendering in JSX.  */}
             {isOpen ? <FiChevronUp /> : <FiChevronDown />}
           </span>
         </summary>

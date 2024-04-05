@@ -1,3 +1,10 @@
+/**
+ * The `About` function in this React component renders multiple sections with text, images, buttons,
+ * and other components to display information about the website's mission, team, and reviews.
+ * @returns The `About` component is being returned, which consists of multiple sections including
+ * information about the company, mission, team, reviews, and footer. Each section contains text
+ * content, images, buttons, and links.
+ */
 import React from "react";
 import Text from "../../Components/Text/Text";
 import about from "../../assets/about.jpeg";

@@ -1,3 +1,11 @@
+/**
+ * The Text component in the provided JavaScript code dynamically applies font styles based on the
+ * specified size prop.
+ * @returns The `Text` component is being returned. It accepts props such as `children`, `className`,
+ * `size`, `htmlTag`, and `restProps`. Inside the component, it determines the HTML tag to use based on
+ * the `htmlTag` prop or defaults to `<p>`. It then applies classes based on the `size` prop using the
+ * `sizeClasses` object and renders the children
+ */
 import React from "react";
 
 const sizeClasses = {
@@ -64,6 +72,12 @@ const sizeClasses = {
   txtPoppinsRegular18Gray800: "font-normal font-poppins",
 };
 
+/**
+ * The `Text` function in JavaScript is a component that renders text with specified styling and
+ * properties.
+ * @returns The Text component is being returned. It renders the children within the specified HTML tag
+ * (default is "p") with additional classes based on the size prop and any custom className provided.
+ */
 function Text({ children, className = "", size, htmlTag, ...restProps }) {
   const Component = htmlTag || "p";
 

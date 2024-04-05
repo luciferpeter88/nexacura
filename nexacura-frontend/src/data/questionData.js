@@ -1,3 +1,6 @@
+/* The code you provided is defining four arrays: `general`, `payment`, `registration`, and `privacy`.
+Each array contains objects with key-value pairs representing frequently asked questions (questions
+and answers) related to different aspects of an AI-powered psychological counseling and therapy app. */
 const general = [
   {
     key: 1,

@@ -1,3 +1,11 @@
+/**
+ * The DefaultRoutes function sets up routing for different pages in a React application using React
+ * Router.
+ * @returns The `DefaultRoutes` component is being returned. It sets up the routing for different pages
+ * in the application using `react-router-dom`. It includes routes for Home, About, Contact, Login,
+ * Register, Pricing, SelectPlan, VerifyingEmail, and VerifiedEmail pages, each associated with a
+ * specific component. The `Nav` component is also included to provide navigation links.
+ */
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../../Pages/Home/HomePage";
