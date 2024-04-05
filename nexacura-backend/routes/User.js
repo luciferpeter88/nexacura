@@ -1,3 +1,5 @@
+/* The User class extends a BaseRoute class and handles updating user data including image upload
+functionality. */
 const UserModel = require("../models/User");
 const BaseRoute = require("../routes/Baseroute");
 const upload = require("../middlewares/multer");
@@ -17,7 +19,6 @@ class User extends BaseRoute {
         bio,
       };
 
-      // If an image file is uploaded, add the image path to the update object
       if (request.file) {
         const path = request.file.path.replace("uploads/", "");
         const imagePath = `http://localhost:4000/${path}`;
@@ -26,9 +27,9 @@ class User extends BaseRoute {
 
       try {
         const updatedUser = await UserModel.findOneAndUpdate(
-          { email: email }, // find a document by email
-          { $set: updateObj }, // dynamically constructed fields to update
-          { new: true } // option to return the updated document
+          { email: email },
+          { $set: updateObj },
+          { new: true }
         );
 
         if (updatedUser) {

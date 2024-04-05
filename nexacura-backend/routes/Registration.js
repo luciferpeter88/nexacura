@@ -1,3 +1,5 @@
+/* The UserRegistration class handles user registration by checking if the email already exists in the
+database and saving the user details if it doesn't. */
 const BaseRoute = require("../routes/Baseroute");
 const PasswordHash = require("../utilities/PasswordHashing");
 const User = require("../models/User");

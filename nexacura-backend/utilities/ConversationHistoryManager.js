@@ -1,3 +1,5 @@
+/* The ConversationHistoryManager class manages a conversation history stored in a text file by
+providing methods to append messages, read the history, and clear the history. */
 const fs = require("fs");
 const path = require("path");
 

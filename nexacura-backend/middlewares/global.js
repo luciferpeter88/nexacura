@@ -1,3 +1,5 @@
+/* The GlobalMiddlewares class sets up various middleware functions for an Express application,
+including body parsing, cookie parsing, CORS handling, session management, and serving static files. */
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -5,10 +7,8 @@ const cors = require("cors");
 const session = require("express-session");
 
 class GlobalMiddlewares {
-  // create a constructor to initialize the express arguement
   constructor(expressArguement) {
     this.app = expressArguement;
-    // run the setup method immediately the class is instantiated
     this.setup();
   }
 

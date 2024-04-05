@@ -1,3 +1,5 @@
+/* The Login class handles user authentication by checking email existence, verifying passwords, and
+setting user session data. */
 const BaseRoute = require("../routes/Baseroute");
 const EmailChecker = require("../utilities/EmailChecker");
 const Authentification = require("../utilities/Authentification");

@@ -1,3 +1,5 @@
+/* The PasswordHash class uses bcrypt to securely hash passwords with a specified number of salt
+rounds. */
 const bcrypt = require("bcrypt");
 
 class PasswordHash {

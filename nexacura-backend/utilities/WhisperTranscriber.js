@@ -1,3 +1,5 @@
+/* The `WhisperTranscriber` class uses the OpenAI API to transcribe audio files using the Whisper
+model. */
 const FormData = require("form-data");
 const fs = require("fs");
 const axios = require("axios");

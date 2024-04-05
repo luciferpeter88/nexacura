@@ -1,3 +1,5 @@
+/* The `SpeechToText` class handles the process of converting audio files to text using various
+utilities like `AudioConverter`, `WhisperTranscriber`, and `OpenAiPsychologist`. */
 const BaseRoute = require("../routes/Baseroute");
 const upload = require("../middlewares/multerAudio");
 const AudioConverter = require("../utilities/AudioConverter");

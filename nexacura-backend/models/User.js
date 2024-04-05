@@ -1,6 +1,8 @@
+/* This code snippet is setting up a schema and model for a MongoDB collection called "users" using
+Mongoose, which is an Object Data Modeling (ODM) library for MongoDB and Node.js. Here's a breakdown
+of what each part of the code is doing: */
 const mongoose = require("mongoose");
 
-// Define the schema for the users collection
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -10,7 +12,6 @@ const userSchema = new mongoose.Schema({
   image: String,
 });
 
-// Create a model for the users collection
 const User = mongoose.model("users", userSchema);
 
 module.exports = User;

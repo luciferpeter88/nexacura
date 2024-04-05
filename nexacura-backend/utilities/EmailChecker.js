@@ -1,3 +1,4 @@
+/* The EmailChecker class checks if a given email is already registered in the User model. */
 const User = require("../models/User");
 class EmailChecker {
   constructor() {

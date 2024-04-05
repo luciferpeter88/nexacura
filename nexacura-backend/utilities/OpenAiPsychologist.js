@@ -1,3 +1,5 @@
+/* The `OpenAiPsychologist` class uses the OpenAI API to generate responses based on user input and
+maintains conversation history. */
 const axios = require("axios");
 const DynamicFolderCreator = require("./DynamicFolderCreator");
 const ConversationHistoryManager = require("./ConversationHistoryManager");

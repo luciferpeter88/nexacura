@@ -1,3 +1,5 @@
+/* The `DatabaseConnection` class establishes a connection to a MongoDB database using Mongoose in a
+Node.js application. */
 const mongoose = require("mongoose");
 
 class DatabaseConnection {
@@ -6,7 +8,6 @@ class DatabaseConnection {
   }
 
   async connect() {
-    // Connect to the database
     try {
       await mongoose.connect(process.env.MONGODB_URI);
       console.log("Database connected successfully");
