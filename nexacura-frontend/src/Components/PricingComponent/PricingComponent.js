@@ -1,3 +1,10 @@
+/**
+ * The `PricingComponent` function renders a pricing component with subscription cards based on data
+ * from the `subscriptions` array.
+ * @returns The PricingComponent function is returning a JSX structure that includes a heading "Choose
+ * your plan", a description text, and a list of SubscriptionCard components generated based on the
+ * data from the subscriptions array.
+ */
 import React from "react";
 import Text from "../Text/Text";
 import SubscriptionCard from "../Card/SubscriptionCard";

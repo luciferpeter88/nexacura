@@ -1,3 +1,8 @@
+/* This code snippet is defining and exporting a constant object named `avatarAppConfig`. This object
+contains various configuration settings for an avatar application. These settings include the
+cognitive service region, subscription key, voice name, avatar character, style, background color,
+ICE server URL, ICE server username, and ICE server credential. By exporting this object, it can be
+imported and used in other parts of the application where these configuration settings are required. */
 export const avatarAppConfig = {
   cogSvcRegion: "westeurope",
   cogSvcSubKey: "cd724c1fe2924a5e9c871802a191fe9f",

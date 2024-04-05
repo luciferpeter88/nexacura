@@ -1,3 +1,12 @@
+/**
+ * The Avatar component in this code snippet sets up a WebRTC connection, creates an avatar
+ * synthesizer, and provides functionality to connect, disconnect, speak, and stop speaking using the
+ * avatar.
+ * @returns The `Avatar` component is being returned. It contains elements for displaying video and
+ * audio streams, buttons for connecting, disconnecting, speaking, and stopping the avatar, as well as
+ * a `Whisper` component. The component sets up a WebRTC connection, creates an avatar synthesizer, and
+ * handles various functions related to speech synthesis and avatar interaction.
+ */
 // import "./Avatar.css";
 import React from "react";
 import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
@@ -30,6 +39,13 @@ export const Avatar = () => {
   }, [initial.avatarAnswer]);
   console.log("Printing mySpeechText ", mySpeechText);
 
+  /**
+   * The function `handleOnTrack` updates UI elements based on the type of media track received in the
+   * event.
+   * @param event - The `handleOnTrack` function is designed to handle incoming media tracks in a
+   * WebRTC context. When a new track is added to the connection, this function is called with an
+   * `event` object containing information about the track.
+   */
   const handleOnTrack = (event) => {
     console.log("#### Printing handle onTrack ", event);
 
@@ -53,6 +69,10 @@ export const Avatar = () => {
     }
   };
 
+  /**
+   * The function `stopSpeaking` stops the avatar from speaking and logs a message indicating that the
+   * stop speaking request was sent.
+   */
   const stopSpeaking = () => {
     avatarSynthesizer
       .stopSpeakingAsync()
@@ -64,6 +84,9 @@ export const Avatar = () => {
       .catch();
   };
 
+  /**
+   * The `stopSession` function stops the avatar from speaking and closes the synthesizer.
+   */
   const stopSession = () => {
     try {
       //Stop speaking
@@ -81,6 +104,10 @@ export const Avatar = () => {
     } catch (e) {}
   };
 
+  /**
+   * The function `speakSelectedText` starts speaking the selected text using an avatar synthesizer and
+   * logs the status and results of the speech synthesis process.
+   */
   const speakSelectedText = () => {
     //Start speaking the text
     const audioPlayer = myAvatarAudioEleRef.current;
@@ -113,6 +140,10 @@ export const Avatar = () => {
       });
   };
 
+  /**
+   * The `startSession` function sets up a WebRTC connection, adds video and audio transceivers, creates
+   * an avatar synthesizer, and handles the connection state changes.
+   */
   const startSession = () => {
     let peerConnection = createWebRTCConnection(
       iceUrl,

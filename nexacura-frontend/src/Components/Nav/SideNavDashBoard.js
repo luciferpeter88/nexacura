@@ -1,3 +1,9 @@
+/**
+ * The SideNavDashBoard function renders a sidebar component with sidebar items and bottom sidebar
+ * items using React.
+ * @returns The `SideNavDashBoard` component is being returned. It contains a sidebar layout with a
+ * logo, sidebar items, and bottom sidebar items rendered using the `SideBarData` component.
+ */
 import React from "react";
 import SideBarData from "../SideBarItem/SideBarData";
 import { sidebarItems, bottomSidebarItems } from "../../data/SideBarData";

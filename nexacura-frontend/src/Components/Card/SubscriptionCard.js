@@ -1,3 +1,11 @@
+/**
+ * The `SubscriptionCard` function in JavaScript renders a subscription card component with name,
+ * price, duration, benefits, and a button to select the plan.
+ * @returns The `SubscriptionCard` component is being returned. It is a functional component that
+ * displays subscription card information such as name, price, duration, benefits, and a button to
+ * select the plan. The card design includes styling for the header, pricing section, benefits list
+ * with checkmarks, and a button styled with gradient colors and hover effects.
+ */
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 import OutlineButton from "../Button/OutlineButton";

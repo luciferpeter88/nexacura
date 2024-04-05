@@ -1,3 +1,10 @@
+/**
+ * The Card component in React renders a styled card with a title and description for a confidential
+ * conversation.
+ * @returns The Card component JSX code is being returned. It consists of a styled card element with a
+ * title "Confidential Conversation" and a description. The card has hover effects for scaling, shadow,
+ * and color changes.
+ */
 import React from "react";
 
 function Card() {

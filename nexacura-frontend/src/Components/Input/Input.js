@@ -1,3 +1,10 @@
+/**
+ * The Input component in React renders an input field or textarea with label, type, placeholder, name,
+ * registration, and error handling functionality.
+ * @returns The `Input` component is being returned. It is a functional component that renders an input
+ * field or a textarea based on the `type` prop passed to it. The component also handles error messages
+ * if any are present.
+ */
 import React from "react";
 
 function Input({ label, type, placeholder, name, register, errors }) {

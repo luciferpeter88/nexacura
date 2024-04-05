@@ -7,6 +7,21 @@ const avatarCharacter = avatarAppConfig.avatarCharacter;
 const avatarStyle = avatarAppConfig.avatarStyle;
 const avatarBackgroundColor = "#FFFFFFFF";
 
+/**
+ * The function creates a WebRTC connection using the specified ICE server URL, username, and
+ * credential.
+ * @param iceServerUrl - Ice server URL is the URL of the ICE (Interactive Connectivity Establishment)
+ * server that helps in establishing a connection between peers in a WebRTC communication.
+ * @param iceServerUsername - The `iceServerUsername` parameter in the `createWebRTCConnection`
+ * function is used to specify the username for connecting to the ICE server. This username is
+ * typically required when setting up ICE servers for WebRTC connections to establish communication
+ * between peers.
+ * @param iceServerCredential - The iceServerCredential parameter typically refers to the password or
+ * credential required to authenticate with the ICE (Interactive Connectivity Establishment) server.
+ * This credential is used to establish a connection for WebRTC communication.
+ * @returns The function `createWebRTCConnection` returns a new `RTCPeerConnection` object configured
+ * with the provided ICE server URL, username, and credential.
+ */
 export const createWebRTCConnection = (
   iceServerUrl,
   iceServerUsername,
@@ -25,6 +40,13 @@ export const createWebRTCConnection = (
   return peerConnection;
 };
 
+/**
+ * The function `createAvatarSynthesizer` creates an avatar synthesizer with specified configurations
+ * for speech synthesis and video format.
+ * @returns The `createAvatarSynthesizer` function returns an instance of `SpeechSDK.AvatarSynthesizer`
+ * configured with the specified speech synthesis settings, avatar character, style, video format, and
+ * background color.
+ */
 export const createAvatarSynthesizer = () => {
   const speechSynthesisConfig = SpeechSDK.SpeechConfig.fromSubscription(
     cogSvcSubKey,

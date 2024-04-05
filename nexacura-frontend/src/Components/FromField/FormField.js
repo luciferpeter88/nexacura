@@ -1,3 +1,10 @@
+/**
+ * The `FormField` function in React renders a form field with a label, placeholder, icon, and
+ * type-specific input field.
+ * @returns The `FormField` component is being returned. It renders a form field with a label,
+ * placeholder, icon, and type based on the props passed to it. If the type is "textbox", it renders a
+ * textarea element, otherwise it renders an input element with an icon.
+ */
 import React from "react";
 
 function FormField({ label, placeholder, icon, type }) {

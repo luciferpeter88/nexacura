@@ -1,3 +1,8 @@
+/**
+ * The Testimonial component in React displays a star rating, review text, and user image with name.
+ * @returns The Testimonial component is being returned, which consists of a testimonial card
+ * displaying the rating stars, review text, and user's name with an image.
+ */
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import Text from "../Text/Text";

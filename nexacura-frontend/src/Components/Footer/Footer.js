@@ -1,3 +1,10 @@
+/**
+ * The `Footer` function in React renders a footer component with company information, social media
+ * links, quick links, and support information.
+ * @returns The `Footer` component is being returned, which consists of a footer section with company
+ * information, social media links, quick links, and support links. The footer also includes the
+ * current year and copyright information.
+ */
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
@@ -6,10 +13,21 @@ import Text from "../Text/Text";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
-  //write a function to get year
+  /**
+   * The function `getYear` returns the current year as a string.
+   * @returns The function `getYear` returns the current year as a string.
+   */
   const getYear = () => {
     return new Date().getFullYear().toString();
   };
+  /**
+   * The function `color` returns either "text-secondary" or "text-white" based on the value of the
+   * `isActive` parameter.
+   * @param isActive - The `isActive` parameter is a boolean value that determines whether an element is
+   * currently active or not. If `isActive` is true, the function will return the CSS class
+   * "text-secondary", indicating that the text should be displayed in a secondary color. If `isActive`
+   * is false, the function will
+   */
   const color = (isActive) => (isActive ? "text-secondary" : "text-white");
   const style = "transition duration-300 ease-in-out";
 

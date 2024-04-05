@@ -1,8 +1,22 @@
+/**
+ * The DefaultNav component renders a navigation bar with links to different pages and buttons for
+ * login and registration, along with a mobile menu for smaller screens.
+ * @returns The DefaultNav component is being returned, which includes a navigation bar with links to
+ * Home, About, Contact, and Pricing pages, along with Login and Register buttons. The component also
+ * includes a MobileMenu component for responsive navigation on smaller screens.
+ */
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import OutlineButton from "../Button/OutlineButton";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
+/**
+ * The MobileMenu function creates a responsive mobile menu with toggle functionality using React
+ * useState hook.
+ * @returns The MobileMenu component is being returned. It consists of a responsive mobile menu with a
+ * toggle button that opens and closes the menu when clicked. The menu includes links to Home, About,
+ * Contact, Pricing, Login, and Register pages.
+ */
 function MobileMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
   const width = isOpen
@@ -53,6 +67,12 @@ function MobileMenu() {
     </div>
   );
 }
+/**
+ * The DefaultNav function defines a navigation bar component with links and buttons for a website.
+ * @returns The DefaultNav function is returning JSX elements for a navigation bar component. It
+ * includes a logo, navigation links for Home, About, Contact, and Pricing, login and register buttons
+ * styled as OutlineButton components, a MobileMenu component, and an Outlet component.
+ */
 function DefaultNav() {
   const color = (isActive) => (isActive ? "text-primary" : "text-gray-400");
   const style = "hover:text-secondary transition duration-300 ease-in-out";

@@ -1,3 +1,9 @@
+/**
+ * The MoreCard component renders a styled card with a title and description emphasizing expertise,
+ * innovation, and educational conversations.
+ * @returns The MoreCard component is being returned, which is a React functional component that
+ * renders a styled card with text content.
+ */
 import React from "react";
 import Text from "../Text/Text";
 
