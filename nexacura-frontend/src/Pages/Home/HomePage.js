@@ -17,20 +17,20 @@ function HomePage() {
       <div className="grid grid-cols-1  lg:grid-cols-2 gap-16 px-10 xl:px-32 pt-24 pb-32 text-white relative bg-custom-image bg-center bg-cover">
         <div className="flex flex-col gap-y-3 z-10 order-2 lg:order-1">
           <Text className="text-5xl " size="txtOpenSansBold50" htmlTag="h1">
-            Chat with History's Legends Through AI
+            {/* Chat with History's Legends Through AI */}
+            Lorem ipsum dolor sit amet, consectetur.
           </Text>
           <Text
             className="text-base text-gray-200"
             size="txtPoppinsRegular20"
             htmlTag="h3"
           >
-            Connect with the greatest minds in history from the comfort of your
-            home. Engage in conversations with iconic historical figures like
-            Isaac Newton and Albert Einstein through our AI-powered platform.
-            Our cutting-edge AI technology brings these historical figures to
-            life in interactive and educational chats.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+            voluptates, quod, quae, quos, quia quibusdam quidem quae quos, quia
+            quibusdam quidem quae quos, quia quibusdam quidem quae quos, quia
+            quibusdam quidem quae quos, quia quibusdam quidem quae quos, quia
+            quibusdam quidem quae quos, quia quibusdam quidem.
           </Text>
-
           <div>
             <NavLink to="/register">
               <OutlineButton
