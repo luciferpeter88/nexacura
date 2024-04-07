@@ -7,7 +7,7 @@ const initialPrompt = require("../prompt/initialPrompt");
 
 class OpenAiPsychologist {
   constructor(request) {
-    this.apiKey = "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";
+    this.apiKey = process.env.OPENAI_API_KEY;
     this.request = request;
   }
 

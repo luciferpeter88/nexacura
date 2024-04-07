@@ -6,7 +6,7 @@ const axios = require("axios");
 
 class WhisperTranscriber {
   constructor() {
-    this.apiKey = "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";
+    this.apiKey = process.env.OPENAI_API_KEY;
   }
 
   async transcribeAudio(readFile) {
