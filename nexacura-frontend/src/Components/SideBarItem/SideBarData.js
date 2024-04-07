@@ -2,6 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import authenticationContext from "../../context/authenticationContext";
 
+/**
+ * The SideBarData component renders an individual sidebar item with an icon, label, and dynamic navigation.
+ * It uses the 'icon', 'label', and 'colour' props to construct the sidebar item's appearance and behavior.
+ * The component interacts with the authentication context for logout functionality and uses React Router's
+ * 'useNavigate' hook for navigation. Depending on the 'label' prop, it navigates to different routes or
+ * performs a logout operation.
+ *
+ * @param {Object} props - Component props
+ * @param {Component} props.icon - React icon component to be displayed.
+ * @param {string} props.label - Label text for the sidebar item.
+ * @param {string} props.colour - Additional CSS classes for styling the sidebar item.
+ */
+
 function SideBarData({ icon: Icon, label, colour }) {
   const { dispatch } = React.useContext(authenticationContext);
 

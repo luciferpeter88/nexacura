@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import authenticationContext from "../../context/authenticationContext";
 
+/**
+ * The Whisper component provides functionality for recording audio from the user's microphone,
+ * sending the audio to a server for speech-to-text conversion, and displaying the converted text.
+ * It utilizes the MediaRecorder API for capturing audio and Axios for server communication.
+ */
+
 function Whisper() {
   const { dispatch } = React.useContext(authenticationContext);
 
